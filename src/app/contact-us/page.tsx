@@ -1,26 +1,13 @@
-
+import Image from "next/image";
 export default function ContactUsPage() {
     return (
-        <div className="bg-slate-500">            
-            <div className="px-1 pt-20 h-full container mx-auto">
-                <div className="">
-                    <div>
-                        <h1 className="">Heading 1</h1>
-                    </div>
-                    <div>
-                        <h2>Header 2</h2>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi eveniet dolore provident ipsum obcaecati odit, facere recusandae, animi possimus nihil veritatis commodi nulla vel eaque fuga quis. Aliquam, illo laudantium.</p>
-                        <h3>Heading 3</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum enim ipsum assumenda error rem quas sequi qui adipisci, sapiente delectus earum cupiditate quisquam libero labore, beatae quo eveniet nobis! Ea?</p>
-                    </div>
-                
-                </div>
-                <div>
-                    <div>
-                    </div>
-                    <div className="h-4 w-4 bg-red-300" >
-                    </div>
-                </div>
+        <div className="bg-slate-500 h-[89vh]">             
+            <div className="px-1 pt-20 container mx-auto flex items-center flex-col gap-4 "> 
+                <h1 className="">Contact Me</h1>
+                <a href="mailto:lilianaecorrea55@gmail.com" className="flex items-center gap-1"><Image src={"/icons/mail_24dp_FILL0_wght400_GRAD0_opsz24.svg"} alt={"mail icon"} width={20} height={20} /> Email me at lilianaecorrea55@gmail.com</a>
+                <a href="linkedin.com/in/liliana-correa-a6670b19">
+{/* <Image src={""} alt={""} width={'20'} height={'20'}/>  */}
+View more on my LinkedIn profile</a>
             </div>
         </div>
     );
