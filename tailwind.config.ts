@@ -13,6 +13,14 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      screens: {
+        // Note: Tailwind does not support CSS variables for breakpoint values directly in the config.
+        // These should align with values inside `/styles/variables/_screens.scss`
+        mobile: { max: '768px' },
+        tablet: { min: '769px', max: '1280px' },
+        tabletAndBelow: { max: '1280px' },
+        smallDesktop: { min: '1281px', max: '1440px' }
+      },
     },
   },
   plugins: [],
