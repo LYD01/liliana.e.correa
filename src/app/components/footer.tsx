@@ -1,5 +1,5 @@
 import Image from "next/image";
-export default function Footer() {
+export const Footer = () => {
     return (
         <footer className="bg-neutral-700 border-t">
             <div className="px-1 text-slate-300 text-sm">

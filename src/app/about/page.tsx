@@ -10,18 +10,9 @@ export default function AboutPage() {
                     <div className="max-w-[600px] py-20">
                             <h1 className="text-white">About</h1>
                             <p className="my-4 ">Liliana Correa is a bilingual Spanish-English writer and educator living in Bundjalung Country in the Northern Rivers. Liliana attained a Doctoral degree from Western Sydney University in 2013 and she has extensive experience working in the areas of community arts and adult education. She is currently working in the vocational education sector and is passionate about supporting adult literacy and lifelong learning. Liliana co-writing a new book documenting the history and legacy of the Multicultural Theatre Alliance in 1990’s Sydney as well as continuing her creative writing projects.</p>
-                        </div>    
+                    </div>    
                 </div>
-                <div>
-                <div>
-                    
-                    </div>
-                    <div className="" >
-                        <Image src={`/img/mar-de-cobo-fin.png`} alt="" width={700} height={700}
-                            className="p-1 my-1 mx-auto shadow-md rounded-l"
-                        ></Image>
-                    </div>
-                </div>
+                <Image src={`/img/mar-de-cobo-fin.png`} alt="" width={700} height={700} className="p-1 my-1 mx-auto shadow-md rounded-l"/>
             </div>
             <div className="p-1 py-12 h-full container mx-auto">
                 <div className="max-w-[900px] select-all text-white p-1 ">

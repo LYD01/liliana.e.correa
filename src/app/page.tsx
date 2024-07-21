@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <main className="flex flex-col justify-center bg-neutral-700">
-      <div className="flex items-center gap-60 tabletAndBelow:gap-10 tabletAndBelow:flex-col tabletAndBelow:items-start max-w-[95%] mx-auto pb-20 pt-4">
+      <div className="flex items-center gap-60 tabletAndBelow:gap-10 tabletAndBelow:flex-col tabletAndBelow:items-start max-w-[95%] mx-auto pt-20 pb-4">
         <div className="max-w-[600px] tabletAndBelow:border-b-2">
           <h1 className="">Liliana E. Correa</h1>
           <h2 className="my-4">Writer, Adult Educator, Language Teacher</h2>
