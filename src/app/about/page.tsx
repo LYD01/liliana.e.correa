@@ -4,8 +4,8 @@ import Link from "next/link";
 
 export default function AboutPage() {
     return (
-        <div className="bg-neutral-700 max-w-[1280px]	 min-h-[56rem]">
-            <div className=" px-1 pt-20 h-full container mx-auto flex items-center justify-between max-[1075px]:flex-col max-[1075px]:items-baseline ">
+        <div>
+            <div className=" px-1 pt-10 h-full container mx-auto flex items-center justify-between max-[1075px]:flex-col max-[1075px]:items-baseline ">
                 <div className=" select-all border-t text-white p-1">
                     <div className="max-w-[600px] py-20">
                         <h1 className="text-white">About</h1>
