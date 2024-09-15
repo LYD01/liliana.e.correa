@@ -3,17 +3,17 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
-export const Header = () =>  {
+export const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(0);
     const handleMenuButonClick = function () {
         isMenuOpen === 1 ? setIsMenuOpen(0) : setIsMenuOpen(1);
     }
     return (
-        <header className="relative bg-neutral-700	border-b">
-            <div className="relative px-1 flex-col items-center justify-between container mx-auto">     
-                <div className="relative top-[0.875rem]">
+        <header className=" bg-neutral-700">
+            <div className="relative px-1 flex-col items-center justify-between container mx-auto">
+                < div className="relative min-h-[1rem]" >
                     {/* left main menu */}
-                    <div className="absolute z-10 my-1 opacity-99">
+                    < div className="absolute z-10 my-1 opacity-99" >
                         <button onClick={handleMenuButonClick} id="menu-button"
                             className=" rounded w-[3rem] h-[3rem] gap-1 flex items-center">
                             <Image
@@ -24,7 +24,7 @@ export const Header = () =>  {
                             />
                             <label htmlFor="#menu-button" className="block text-white h-full pt-[0.75rem] cursor-pointer">Menu</label>
                         </button>
-                    </div>
+                    </div >
                     <div className={`absolute left-0 top-20 rounded bg-blue-500 w-[10rem] z-10 ${isMenuOpen === 1 ? "block" : "hidden"}`}>
                         <ul className=" flex flex-col gap-1 select-text text-white">
                             <li className="w-full">
@@ -59,8 +59,8 @@ export const Header = () =>  {
                             </li>
                         </ul>
                     </div>
-                </div>
-            </div>
-        </header>
+                </div >
+            </div >
+        </header >
     );
 }
