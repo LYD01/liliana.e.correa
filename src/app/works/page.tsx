@@ -18,15 +18,15 @@ export default function WorksPage() {
         { id: 8, title: 'Los Sentidos de la Noche (Senses of the Night)', description: "One way to explore the complexities of senses, cultures and identities is through creativity and in conversations with other artists exchanging experiences or reflecting about personal journeys. I use creative prose, poetry and image-text compositions, for example in the form of postcards or collage. Creative conversations have facilitated an understanding of this country's complexities, and through this process I can make sense of my surroundings while sustaining a connection with places in Latin America I considered home. In this instance I invited Uruguayan painter Abigail Lutzen, trained in the Constructivist School of paint led by Torres Garcia and Tjanara Jaly Talbot, a young Indigenous woman from Sydney who supports Sydney Action for Juarez, a group that I established with other women to raise awareness about gender violence in Mexico. These are different representations of poetic and visual “feminine sensitivities” showing how we make sense of our immediate cultural environment in solidarity with others and engaging in creative collaborations as women artists.", url: "", img: "/img/Los-Sentidos-de-la-Noche.png" },
         { id: 9, title: 'Araña', description: '', url: "", img: "/img/puentes-review-issue3.png" },
         { id: 10, title: 'Perdiendo el rastro', description: '', url: "", img: "/img/puentes-review-issue3.png" },
-        {id: 11, title: 'From Hermosillo to Hill End: Potter Lino Alvarez Carrasco', description: "<iframe src='https://player.vimeo.com/video/23463046?h=fb2e54c9c0' width='640' height='480' frameborder='0' allow='autoplay; fullscreen; picture-in-picture' allowfullscreen></iframe><p><a href='https://vimeo.com/23463046'></a", url: "", img: "/img/pic-of-vid.png" },
+        { id: 11, title: 'From Hermosillo to Hill End: Potter Lino Alvarez Carrasco', description: "<iframe src='https://player.vimeo.com/video/23463046?h=fb2e54c9c0' width='640' height='480' frameborder='0' allow='autoplay; fullscreen; picture-in-picture' allowfullscreen></iframe><p><a href='https://vimeo.com/23463046'></a", url: "", img: "/img/pic-of-vid.png" },
     ];
 
     return (
-        <div className=" bg-neutral-700">            
+        <div className=" bg-neutral-700 max-w-[1280px] mx-auto">
             <div className="px-1 pt-20 pb-10 h-full container mx-auto">
                 <div className=" border-t">
                     <h1 className="my-4">Creative Works</h1>
-                    <CardList cardsData={cardsData} /> 
+                    <CardList cardsData={cardsData} />
                 </div>
             </div>
         </div>
