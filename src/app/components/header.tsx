@@ -2,7 +2,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-
 export const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(0);
     const handleMenuButonClick = function () {
@@ -11,15 +10,11 @@ export const Header = () => {
     return (
         <header className="sticky ml-4  top-10 ">
             <div className="absolute">
-
-
-                {/* left main menu */}
                 < div className="opacity-99" >
                     <button onClick={handleMenuButonClick} id="menu-button"
                         className=" rounded w-[3rem] h-[3rem] gap-1 flex items-center flex-col-reverse">
                         <Image
                             className="h-full w-full rounded-[50%]"
-                            // src={`/icons/menu_24dp_FILL0_wght400_GRAD0_opsz24.svg`}
                             src="/img/LEC-mural.jpg"
                             height={30} width={30} alt="Lilianan Logo"
                         />
@@ -60,9 +55,7 @@ export const Header = () => {
                         </li>
                     </ul>
                 </div>
-
             </div>
-
         </header >
     );
 }

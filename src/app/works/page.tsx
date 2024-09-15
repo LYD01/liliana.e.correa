@@ -1,5 +1,4 @@
 import { CardList } from "../components/cards-list";
-
 export default function WorksPage() {
     const cardsData = [
         { id: 1, title: 'La Nena Mágica', description: 'La nena mágica tells the story of a young girl who is forced to leave her homeland and grow up in a foreign culture.', url: "/works/la-nena-magica", img: "/img/la-nene-majica.jpeg" },
@@ -20,10 +19,9 @@ export default function WorksPage() {
         { id: 10, title: 'Perdiendo el rastro', description: '', url: "", img: "/img/puentes-review-issue3.png" },
         { id: 11, title: 'From Hermosillo to Hill End: Potter Lino Alvarez Carrasco', description: "<iframe src='https://player.vimeo.com/video/23463046?h=fb2e54c9c0' width='640' height='480' frameborder='0' allow='autoplay; fullscreen; picture-in-picture' allowfullscreen></iframe><p><a href='https://vimeo.com/23463046'></a", url: "", img: "/img/pic-of-vid.png" },
     ];
-
     return (
-        <div className=" bg-neutral-700 max-w-[1280px] mx-auto">
-            <div className="px-1 pt-20 pb-10 h-full container mx-auto">
+        <div className=" bg-neutral-700 max-w-[1280px] mx-auto tabletAndBelow:px-4">
+            <div className=" pt-20 pb-10 h-full container mx-auto">
                 <div className=" border-t">
                     <h1 className="my-4">Creative Works</h1>
                     <CardList cardsData={cardsData} />

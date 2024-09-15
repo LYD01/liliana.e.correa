@@ -9,8 +9,8 @@ export const Footer = () => {
                         <Image src={`/img/LEC-mural.jpg`} width={24} height={24} alt={`Liliana Logo`} className="rounded-[50%]" />
                     </div>
                     <p className="max-w-[40rem] tabletAndBelow:max-w-[30rem] text-[12px]">I acknowledge traditional owners of Country throughout Australia. I recognised their continuing connection to lands, waters, and communities and the Widjabul Wiyebal people of the Bundjalung Nation, traditional custodians of the land on which I now live.</p>
-                </div>  
-            </div>            
+                </div>
+            </div>
         </footer>
-    );     
+    );
 }

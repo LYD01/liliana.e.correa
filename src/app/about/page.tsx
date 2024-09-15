@@ -1,10 +1,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
-
 export default function AboutPage() {
     return (
-        <div>
+        <>
             <div className=" px-1 pt-[8px] h-full max-w-[1480px] mx-auto flex items-center justify-between tabletAndBelow:flex-col tabletAndBelow:pt-16 tabletAndBelow:px-4">
                 <div className=" select-all border-t text-white p-1 mr-4">
                     <div className="max-w-[600px] py-20 tabletAndBelow:py-10">
@@ -12,9 +11,7 @@ export default function AboutPage() {
                         <p className="my-4 ">Liliana Correa is a bilingual Spanish-English writer and educator living in Bundjalung Country in the Northern Rivers. Liliana attained a Doctoral degree from Western Sydney University in 2013 and she has extensive experience working in the areas of community arts and adult education. She is currently working in the vocational education sector and is passionate about supporting adult literacy and lifelong learning. Liliana co-writing a new book documenting the history and legacy of the Multicultural Theatre Alliance in 1990’s Sydney as well as continuing her creative writing projects.</p>
                     </div>
                 </div>
-
                 <Image src={`/img/mar-de-cobo-fin.png`} alt="" width={700} height={700} className="mt-[7rem] tabletAndBelow:mt-4 mx-auto shadow-md rounded-l " />
-
             </div>
             <div className="p-1 py-12  h-full container mx-auto tabletAndBelow:text-center">
                 <div className="max-w-[900px] select-all text-white p-1 [&_section]:p-1">
@@ -48,6 +45,6 @@ export default function AboutPage() {
                     </section>
                 </div>
             </div>
-        </div>
+        </>
     );
 }
