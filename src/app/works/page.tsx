@@ -1,30 +1,14 @@
-import { CardList } from "../components/cards-list";
+import { CardList } from "../_components/cards-list";
+import { WORKS_DATA } from "../_constants";
+
 export default function WorksPage() {
-    const cardsData = [
-        { id: 1, title: 'La Nena Mágica', description: 'La nena mágica tells the story of a young girl who is forced to leave her homeland and grow up in a foreign culture.', url: "/works/la-nena-magica", img: "/img/la-nene-majica.jpeg" },
-        {
-            id: 2, title: 'Syncretic',
-            subTitle: "Stories from Latin Americans in Australia",
-            description: "Syncretic is a collaboration between Sydney based photographer Shane Rozario and myself...",
-            url: "/assets/Stories-from-Latin-Americans-in-Australia.pdf",
-            img: "/img/Syncretic-img.png"
-        },
-        { id: 3, title: 'The Politics Of Cultural Visibility', description: 'This professional doctorate is an empirical research grounded in theoretical and creative methodologies. It has produced work that combines scholarly research, creative arts publication and academic writing...', url: "/works/the-politicss-of-cultural-visibility", img: "/img/lili-phd-work.png" },
-        { id: 4, title: 'Cuerpos', description: '', url: "/works/cuerpos", img: "/img/AMWP-issue-5.png" },
-        { id: 5, title: 'Poetics in the Time of Pandemic. There is Always Going to be a Before and an After', description: 'This paper reflects on the impact of lockdown in Sydney on artists and creatives. We share our personal story of how we imagined our lives would be before COVID-19 and the changes we observed after entering in pandemic mode...', url: "/works/poetics-in-the-time-of-pandemic", img: "/img/Poetics-in-the-Time-of-Pandemic.jpeg" },
-        { id: 6, title: 'From Little Words, Big Words Grow: Annotations on the Yo, Sí Puedo Experience in Brewarrina, Australia', description: 'This article is a reflection on the application of the Cuban literacy methodology Yo, Sí Puedo to the Australian setting. The Yo, Sí Puedo / Yes, I Can! model developed in Cuba by the Instituto Pedagógico Latinoamericano y Caribeño, IPLAC (Institute of Pedagogy for Latin America and the Caribbean) has been successfully implemented across the Global South as a strategy of adult literacy...', url: "/works/from-little-words", img: "/img/From-Little-Words.png" },
-        { id: 7, title: 'El lugar de la memoria: Where Memory Lies', description: "Memory, belonging and continuity beginning with history, unthinkable events somehow unnamed that will remain somewhere, that will get retold, once and once again. Letting the storyteller continue unravelling and recuperating moments. Memory giving us context and place, a geographic and historical site with references to the past and, at the same time, placing us in an active present time, making my actions relevant to this here, and now, in a space of absolute belonging. Perhaps this is why we, migrants repeating our millenary customs with some sense of attachment, continue to transform the ordinary into the extraordinary and so then a story must be told. This article explores the distinctive roles that memory play in the context of migration. Memory dynamic is constructed in dialogue with others, and resides in artistic expression, or what Paul Willis calls cultural penetrations. Memory contextualizes our actions and functions as emotional sustenance. For those living outside their culture of origin, by choice or forced, there is a constant tension in our daily negotiations with the surrogate country: a tension between conflicting desires and responsibilities that memory helps to alleviate. Memory and the reinvention of one's histories mediate between current geographic locations and imaginary homes by providing a sense of place and belonging. Looking at the role that memory plays for Latin American migrants in Australia, I reflect on my own experiences utilizing a bilingual mode of expression that includes personal accounts, excerpts from artists' testimonials, and photographic documentation.", url: "", img: "/img/El-lugar-de-la-memoria.png" },
-        { id: 8, title: 'Los Sentidos de la Noche (Senses of the Night)', description: "One way to explore the complexities of senses, cultures and identities is through creativity and in conversations with other artists exchanging experiences or reflecting about personal journeys. I use creative prose, poetry and image-text compositions, for example in the form of postcards or collage. Creative conversations have facilitated an understanding of this country's complexities, and through this process I can make sense of my surroundings while sustaining a connection with places in Latin America I considered home. In this instance I invited Uruguayan painter Abigail Lutzen, trained in the Constructivist School of paint led by Torres Garcia and Tjanara Jaly Talbot, a young Indigenous woman from Sydney who supports Sydney Action for Juarez, a group that I established with other women to raise awareness about gender violence in Mexico. These are different representations of poetic and visual “feminine sensitivities” showing how we make sense of our immediate cultural environment in solidarity with others and engaging in creative collaborations as women artists.", url: "", img: "/img/Los-Sentidos-de-la-Noche.png" },
-        { id: 9, title: 'Araña', description: '', url: "", img: "/img/puentes-review-issue3.png" },
-        { id: 10, title: 'Perdiendo el rastro', description: '', url: "", img: "/img/puentes-review-issue3.png" },
-        { id: 11, title: 'From Hermosillo to Hill End: Potter Lino Alvarez Carrasco', description: "<iframe src='https://player.vimeo.com/video/23463046?h=fb2e54c9c0' width='640' height='480' frameborder='0' allow='autoplay; fullscreen; picture-in-picture' allowfullscreen></iframe><p><a href='https://vimeo.com/23463046'></a", url: "", img: "/img/pic-of-vid.png" },
-    ];
+
     return (
         <div className=" bg-neutral-700 max-w-[1280px] mx-auto tabletAndBelow:px-4">
             <div className=" pt-20 pb-10 h-full container mx-auto">
                 <div className=" border-t">
                     <h1 className="my-4">Creative Works</h1>
-                    <CardList cardsData={cardsData} />
+                    <CardList cardsData={WORKS_DATA} />
                 </div>
             </div>
         </div>

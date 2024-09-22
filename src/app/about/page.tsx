@@ -1,6 +1,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { BASE_URL } from "../_constants";
 export default function AboutPage() {
     return (
         <>
@@ -23,14 +24,14 @@ export default function AboutPage() {
                     <section className="w-full bg-slate-600 border-y p-4">
                         <h3 className="">Latin American Arts Practices in Sydney</h3>
                         <span className="block my-1 py-1 font-semibold">2012</span>
-                        <Link href={``} className="hover:underline text-blue-200">
+                        <Link href={`${BASE_URL}/works/the-politicss-of-cultural-visibility`} className="hover:underline text-blue-200">
                             Doctorate of Cultural Research Thesis: The Politics of Cultural Visibility
                         </Link>
                     </section>
                     <section className="w-full bg-slate-600 border-b p-4">
                         <h3 className="">Syncretic</h3>
                         <span className=" my-1 py-1 font-semibold hidden"></span>
-                        <Link href={``} className="hover:underline text-blue-200">
+                        <Link href={`${BASE_URL}/works`} className="hover:underline text-blue-200">
                             Stories from Latin Americans in Australia
                         </Link>
                     </section>
