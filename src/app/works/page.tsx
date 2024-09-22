@@ -1,4 +1,4 @@
-import { CardList } from "../_components/cards-list";
+import { CardList } from "../_components/CardsList";
 import { WORKS_DATA } from "../_constants";
 
 export default function WorksPage() {

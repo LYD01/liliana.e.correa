@@ -1,7 +1,8 @@
 "use client"
 import React, { useState } from 'react';
-import { SearchBar } from './search-bar';
-import { Card } from './cards';
+
+import { Card } from './Card';
+import { SearchBar } from './SearchBar';
 export const CardList = ({ cardsData }: { cardsData: any }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const filteredCards = cardsData.filter((card: any) =>
