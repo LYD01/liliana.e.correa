@@ -9,10 +9,10 @@ export default function AboutPage() {
                     <div className="max-w-[600px] py-20 tabletAndBelow:py-10">
                         <h1 className="text-white">About</h1>
                         <p className="my-4 ">Liliana Correa is a bilingual Spanish-English writer and educator living in Bundjalung Country in the Northern Rivers. Liliana attained a Doctoral degree from Western Sydney University in 2013 and she has extensive experience working in the areas of community arts and adult education. She is currently working in the vocational education sector and is passionate about supporting adult literacy and lifelong learning.
-                            <strong>
-                                Liliana is currently researching the participation of radicalised artists  in the theatre industry in Sydney during the late 1980 and 1990’s.as well as continuing with her creative writing project.
-                            </strong>
                         </p>
+                        <strong>
+                            Liliana is currently researching the participation of radicalised artists  in the theatre industry in Sydney during the late 1980 and 1990’s.as well as continuing with her creative writing project.
+                        </strong>
                     </div>
                 </div>
                 <Image src={`/img/mar-de-cobo-fin.png`} alt="" width={700} height={700} className="mt-[7rem] tabletAndBelow:mt-4 mx-auto shadow-md rounded-l " />

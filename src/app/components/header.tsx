@@ -50,7 +50,7 @@ export const Header = () => {
                             <Link
                                 onClick={() => setIsMenuOpen(0)}
                                 href="/contact-us" className="flex items-center justify-between py-4 pl-1 pr-4 hover:bg-blue-600 ">
-                                <Image className="w-8 h-8" src={`/icons/mail_24dp_FILL0_wght400_GRAD0_opsz24.svg`} alt="navigate to about liliana's contact us page" height={10} width={10} /> Contact Us
+                                <Image className="w-8 h-8" src={`/icons/mail_24dp_FILL0_wght400_GRAD0_opsz24.svg`} alt="navigate to about liliana's contact us page" height={10} width={10} /> Contact
                             </Link>
                         </li>
                     </ul>
