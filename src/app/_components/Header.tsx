@@ -1,16 +1,19 @@
 "use client"
+import { header } from "framer-motion/client";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+// import { Menu } from "./Menu/Menu";
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(0);
     const handleMenuButonClick = function () {
         isMenuOpen === 1 ? setIsMenuOpen(0) : setIsMenuOpen(1);
     }
+
     return (
         <header className="sticky ml-4  top-10 ">
             <div className="absolute">
-                < div className="opacity-99" >
+                <div className="opacity-99" >
                     <button onClick={handleMenuButonClick} id="menu-button"
                         className=" rounded w-[3rem] h-[3rem] gap-1 flex items-center flex-col-reverse">
                         <Image
@@ -57,5 +60,9 @@ export default function Header() {
                 </div>
             </div>
         </header >
+        // <header>
+        //     <Menu />
+        // </header>
+
     );
 }
