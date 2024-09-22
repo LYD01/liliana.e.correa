@@ -24,6 +24,7 @@ export default function ArticlePage() {
                     <div>
                         <Image src={`${card.img}`} alt={"card.img.alt"} width={200} height={200}></Image>
                     </div>
+
                 </div>
             </div>
         </div>

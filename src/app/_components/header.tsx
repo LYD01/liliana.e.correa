@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-export const Header = () => {
+export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(0);
     const handleMenuButonClick = function () {
         isMenuOpen === 1 ? setIsMenuOpen(0) : setIsMenuOpen(1);
