@@ -1,7 +1,7 @@
 
 import { Card } from './Card';
 
-export const CardList = ({ cardsData, searchQuery }: { cardsData: any, searchQuery: string }) => {
+export const CardsList = ({ cardsData, searchQuery }: { cardsData: any, searchQuery: string }) => {
   const filteredCards = cardsData.filter((card: any) =>
     card.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
     card.description.toLowerCase().includes(searchQuery.toLowerCase())

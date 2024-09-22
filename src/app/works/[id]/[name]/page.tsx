@@ -5,10 +5,9 @@ import Image from "next/image";
 
 export default function ArticlePage() {
     // TODO: cmolpete articles
-    const { id } = useParams(); // Get both id and name from URL
-    const cardId = Number(id); // Convert id to number
+    const { id } = useParams();
+    const cardId = Number(id);
 
-    // Find the relevant card using the id
     const card = WORKS_DATA.find(card => card.id === cardId);
 
     if (!card) {
@@ -24,10 +23,7 @@ export default function ArticlePage() {
                     </div>
                     <div>
                         <Image src={`${card.img}`} alt={"card.img.alt"} width={200} height={200}></Image>
-
-
                     </div>
-
                 </div>
             </div>
         </div>
