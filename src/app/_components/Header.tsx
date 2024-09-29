@@ -11,7 +11,7 @@ export default function Header() {
     }
 
     return (
-        <header className="sticky ml-4  top-10 ">
+        <header className="sticky ml-2 top-10">
             <div className="absolute">
                 <div className="opacity-99" >
                     <button onClick={handleMenuButonClick} id="menu-button"

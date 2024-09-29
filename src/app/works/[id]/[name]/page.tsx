@@ -2,6 +2,7 @@
 import { WORKS_DATA } from "@/app/_constants";
 import { useParams } from "next/navigation";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ArticlePage() {
     // TODO: cmolpete articles
@@ -21,8 +22,14 @@ export default function ArticlePage() {
                     <div>
                         <h1 className="my-4">{card.title}</h1>
                     </div>
-                    <div>
-                        <Image src={`${card.img}`} alt={"card.img.alt"} width={200} height={200}></Image>
+                    <div className="w-fit">
+                        {card.externalUrl ?
+                            <Link href={card.externalUrl} target="_blank" >
+                                <Image src={`${card.img}`} alt={"card.img.alt"} width={200} height={200} />
+                            </Link>
+                            :
+                            <Image src={`${card.img}`} alt={"card.img.alt"} width={200} height={200} />
+                        }
                     </div>
 
                 </div>

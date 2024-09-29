@@ -8,11 +8,11 @@ export const Card = ({
   img,
   className
 }: {
-  title: any
-  description: any
-  url: any
-  img: any
-  className: any
+  title: string;
+  description: string;
+  url: string;
+  img: string;
+  className: string;
 }) => {
   return (
     <div className={`card rounded h-auto w-[16rem] border bg-zinc-900 flex flex-col justify-between transition-all duration-300 ease-in-out ${className}`}>

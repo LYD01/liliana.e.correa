@@ -2,8 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 export default function Home() {
   return (
-    <main className="w-full mx-auto tabletAndBelow:px-4 max-w-[1280px]">
-      <div className="flex items-center gap-40 tabletAndBelow:gap-10 flex-col tabletAndBelow:items-start mx-auto py-10 tabletAndBelow:pt-24">
+    <main className="w-full mx-auto tabletAndBelow:px-4 max-w-[1280px] pl-[4rem]">
+      <div className="flex items-center gap-40 tabletAndBelow:gap-10 flex-col tabletAndBelow:items-start mx-auto py-10 tabletAndBelow:pt-24 tabletAndBelow:pl-0">
         <div className=" tabletAndBelow:border-b-2 flex gap-10 tabletAndBelow:flex-col">
           <div>
             <h1 className="">Liliana E. Correa</h1>

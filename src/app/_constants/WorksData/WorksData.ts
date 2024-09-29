@@ -1,6 +1,6 @@
 
 export const WORKS_DATA = [
-        { id: 1, title: 'La Nena Mágica', description: 'La nena mágica tells the story of a young girl who is forced to leave her homeland and grow up in a foreign culture.', url: "works/1/la-nena-magica", img: "/img/la-nene-majica.jpeg" },
+        { id: 1, title: 'La Nena Mágica', description: 'La nena mágica tells the story of a young girl who is forced to leave her homeland and grow up in a foreign culture.', url: "works/1/la-nena-magica", img: "/img/la-nene-majica.jpeg", externalUrl: 'https://www.amazon.com.au/nena-m%C3%A1gica-Liliana-Correa/dp/8419339431', },
         {
             id: 2, title: 'Syncretic',
             subTitle: "Stories from Latin Americans in Australia",
