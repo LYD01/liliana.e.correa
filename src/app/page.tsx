@@ -26,7 +26,9 @@ export default function Home() {
                 className="h-auto w-full rounded shadow-2xl"
               />
               <div className="bg-red-900 rounded md:absolute md:right-[-130px] md:bottom-2 p-4 border shadow-2xl">
-                <h3>La Nena Mágica</h3>
+                <h3 className="flex gap-1">La Nena Mágica
+                  <Image className="w-4 h-4 mb-4" src={`/icons/open_in_new_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg`} alt="navigate to purchasing this book" height={10} width={10} />
+                </h3>
               </div>
             </Link>
           </div>
