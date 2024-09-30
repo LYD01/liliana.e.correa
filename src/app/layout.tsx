@@ -25,7 +25,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} min-h-dvh mx-auto relative bg-neutral-800 `}>
         <Header />
-        {children}
+        <main className="w-full mx-auto tabletAndBelow:px-4 max-w-[1280px] pl-[4rem]">
+          {children}
+        </main>
         <Footer />
       </body>
     </html >

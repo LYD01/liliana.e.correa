@@ -4,7 +4,7 @@ import Link from "next/link";
 import { BASE_URL } from "../_constants";
 export default function AboutPage() {
     return (
-        <>
+        <div>
             <div className=" px-1 pt-[8px] h-full max-w-[1480px] mx-auto flex items-center justify-between tabletAndBelow:flex-col tabletAndBelow:pt-16 tabletAndBelow:px-4">
                 <div className=" select-all border-t text-white p-1 mr-4">
                     <div className="max-w-[600px] py-20 tabletAndBelow:py-10">
@@ -50,6 +50,6 @@ export default function AboutPage() {
                     </section>
                 </div>
             </div>
-        </>
+        </div >
     );
 }
