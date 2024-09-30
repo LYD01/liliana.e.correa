@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} min-h-dvh mx-auto relative bg-neutral-800 `}>
+      <body className={` bg-neutral-800`}>
         <Header />
         <main className="w-full mx-auto tabletAndBelow:px-4 max-w-[1280px] pl-[4rem]">
           {children}

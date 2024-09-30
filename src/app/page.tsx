@@ -20,7 +20,7 @@ export default function Home() {
         <h4 className="text-[2rem] pb-10">Most recent work</h4>
         <div className="flex justify-start tabletAndBelow:justify-end">
           <Link href={`https://www.amazon.com.au/nena-m%C3%A1gica-Liliana-Correa/dp/8419339431`}
-            className="h-auto w-[20rem] max-md:w-[15rem] block relative">
+            className="h-auto w-[20rem] max-md:w-[15rem] block relative tablet:mr-[9rem]">
             <Image
               src={'/img/la-nene-majica.jpeg'} width={100} height={250} alt="la nene majica"
               className="h-auto w-full rounded shadow-2xl"
@@ -32,7 +32,7 @@ export default function Home() {
             </div>
           </Link>
         </div>
-        <Link className="block max-w-fit p-4 mt-4 text-white hover:scale-[1.1] transition tabletAndBelow:float-right" href={'/about'}>{'About Liliana and her works ->'}</Link>
+        <Link className="tablet-[9rem] block max-w-fit p-4 mt-4 text-white hover:scale-[1.1] transition tabletAndBelow:float-right" href={'/about'}>{'About Liliana and her works ->'}</Link>
       </div>
     </div>
 

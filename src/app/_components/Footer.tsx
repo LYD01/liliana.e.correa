@@ -1,7 +1,7 @@
 import Image from "next/image";
 export default function Footer() {
     return (
-        <footer className="bg-neutral-700 border-t">
+        <footer className="border-t">
             <div className="px-1 text-slate-300 text-sm">
                 <div className="p-6 flex items-start justify-between gap-1 text-right mobile:text-left mobile:flex-col mobile:gap-4 ">
                     <div className="flex items-center">
