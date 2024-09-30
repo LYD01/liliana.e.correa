@@ -16,8 +16,8 @@ export default function Home() {
     visible: {
       opacity: 1,
       transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.2
+        delayChildren: 0.6,
+        staggerChildren: 0.6
       }
     }
   };
@@ -46,41 +46,41 @@ export default function Home() {
         />
       </div>
       {/* TODO: move to reusable or add somewhere meaningful. */}
-      <div
-      // ref={container}
-      // style={{
-      //   transform: isInView ? "none" : "translateX(-200px)",
-      //   opacity: isInView ? 1 : 0,
-      //   transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
-      // }}
+      {/* <div
+      ref={container}
+      style={{
+        transform: isInView ? "none" : "translateX(-200px)",
+        opacity: isInView ? 1 : 0,
+        transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
+      }}
+      > */}
+      <motion.div
+        className="w-full"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
       >
-        <motion.div
-          className="w-full"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          <motion.h4 className="text-[2rem] pb-10" variants={itemVariants}>Most recent work</motion.h4>
-          <motion.div className="flex justify-start tabletAndBelow:justify-end" variants={itemVariants}>
-            <Link href={`https://www.amazon.com.au/nena-m%C3%A1gica-Liliana-Correa/dp/8419339431`}
-              className="h-auto w-[20rem] max-md:w-[15rem] block relative tablet:mr-[9rem]">
-              <Image
-                src={'/img/la-nene-majica.jpeg'} width={100} height={250} alt="la nene majica"
-                className="h-auto w-full rounded shadow-2xl"
-              />
-              <div className="bg-red-900 rounded md:absolute md:right-[-130px] md:bottom-2 p-4 border shadow-2xl">
-                <h3 className="flex gap-1">La Nena Mágica
-                  <Image className="w-4 h-4 mb-4" src={`/icons/open_in_new_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg`} alt="navigate to purchasing this book" height={10} width={10} />
-                </h3>
-              </div>
-            </Link>
-          </motion.div>
-          <motion.div variants={itemVariants}>
-            <Link className="tablet-[9rem] block max-w-fit p-4 mt-4 text-white hover:scale-[1.1] transition tabletAndBelow:float-right" href={'/about'}>{'About Liliana and her works ->'}</Link>
-          </motion.div>
+        <motion.h4 className="text-[2rem] pb-10" variants={itemVariants}>Most recent work</motion.h4>
+        <motion.div className="flex justify-start tabletAndBelow:justify-end" variants={itemVariants}>
+          <Link href={`https://www.amazon.com.au/nena-m%C3%A1gica-Liliana-Correa/dp/8419339431`}
+            className="h-auto w-[20rem] max-md:w-[15rem] block relative tablet:mr-[9rem]">
+            <Image
+              src={'/img/la-nene-majica.jpeg'} width={100} height={250} alt="la nene majica"
+              className="h-auto w-full rounded shadow-2xl"
+            />
+            <div className="bg-red-900 rounded md:absolute md:right-[-130px] md:bottom-2 p-4 border shadow-2xl">
+              <h3 className="flex gap-1">La Nena Mágica
+                <Image className="w-4 h-4 mb-4" src={`/icons/open_in_new_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg`} alt="navigate to purchasing this book" height={10} width={10} />
+              </h3>
+            </div>
+          </Link>
         </motion.div>
-      </div>
-    </div>
+        <motion.div variants={itemVariants}>
+          <Link className="tablet-[9rem] block max-w-fit p-4 mt-4 text-white hover:scale-[1.1] transition tabletAndBelow:float-right" href={'/about'}>{'About Liliana and her works ->'}</Link>
+        </motion.div>
+      </motion.div>
+      {/* </div> */}
+    </div >
 
 
   );
