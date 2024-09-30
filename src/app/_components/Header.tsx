@@ -2,20 +2,35 @@
 import { header } from "framer-motion/client";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 // import { Menu } from "./Menu/Menu";
 
 export default function Header() {
-    const [isMenuOpen, setIsMenuOpen] = useState(0);
-    const handleMenuButonClick = function () {
-        isMenuOpen === 1 ? setIsMenuOpen(0) : setIsMenuOpen(1);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const menuRef = useRef<HTMLDivElement>(null);
+
+    const handleMenuButtonClick = function () {
+        setIsMenuOpen(prevState => !prevState);
     }
 
+    useEffect(() => {
+        function handleClickOutside(event: MouseEvent) {
+            if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+                setIsMenuOpen(false);
+            }
+        }
+
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
+
     return (
-        <header className="sticky ml-2 top-10 z-30">
+        <header className="sticky ml-2 top-10 z-30" ref={menuRef}>
             <div className="absolute">
                 <div className="opacity-99" >
-                    <button onClick={handleMenuButonClick} id="menu-button"
+                    <button onClick={handleMenuButtonClick} id="menu-button"
                         className=" rounded w-[3rem] h-[3rem] gap-1 flex items-center flex-col-reverse">
                         <Image
                             className="h-full w-full rounded-[50%]"
@@ -25,7 +40,7 @@ export default function Header() {
                         <label htmlFor="#menu-button" className="block text-white h-full cursor-pointer">Menu</label>
                     </button>
                 </div >
-                <div className={`rounded bg-blue-500 w-[10rem] z-10 ${isMenuOpen === 1 ? "block" : "hidden"}`}>
+                <div className={`rounded bg-blue-500 w-[10rem] z-10 ${isMenuOpen ? "block" : "hidden"}`}>
                     <ul className=" flex flex-col gap-1 select-text text-white">
                         <li className="w-full">
                             <Link href="/" className="flex items-center justify-between py-4 pl-1 pr-4 hover:bg-blue-600"
