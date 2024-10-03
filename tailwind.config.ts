@@ -13,6 +13,7 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         'main-gradient-135': 'linear-gradient(135deg, #202123, #11141F, #323236)',
+        'menu-gradient': 'linear-gradient(#D3B8AE, #A67C52)'
       },
 
       screens: {

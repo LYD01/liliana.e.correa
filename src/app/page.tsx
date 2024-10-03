@@ -33,7 +33,7 @@ export default function Home() {
 
 
   return (
-    <div className="flex items-center gap-40 tabletAndBelow:gap-10 flex-col tabletAndBelow:items-start mx-auto py-10 tabletAndBelow:pt-24 tabletAndBelow:pl-0">
+    <div className="flex items-center tabletAndBelow:gap-10 flex-col tabletAndBelow:items-start mx-auto py-10 tabletAndBelow:pt-24 tabletAndBelow:pl-0">
       <div className=" tabletAndBelow:border-b-2 flex gap-10 tabletAndBelow:flex-col">
         <div>
           <h1 className="">Liliana E. Correa</h1>
@@ -43,11 +43,11 @@ export default function Home() {
           <p className="my-4">An esteemed Argentinian academic, Liliana has made significant strides in the literary world, blending her cultural insights with her educational expertise to enrich her readers and students alike.</p>
         </div>
         <Image src={`/img/lili-photo.jpeg`} alt="Photo of Liliana" width={200} height={200}
-          className="max-w-md	 w-full max-md:w-[15rem] py-4 rounded-lg tabletAndAbove:pt-[10rem]"
+          className="max-w-md	w-full max-md:w-[15rem] py-4 rounded-lg tabletAndAbove:pt-[10rem]"
         />
       </div>
       <motion.div
-        className="w-full"
+        className="w-full "
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -61,7 +61,7 @@ export default function Home() {
               className="h-auto w-full rounded shadow-2xl"
             />
             <div className="bg-red-900 rounded md:absolute md:right-[-130px] md:bottom-2 p-4 border shadow-2xl">
-              <h3 className="flex gap-1">La Nena Mágica
+              <h3 className="flex gap-1 underline">La Nena Mágica
                 <Image className="w-4 h-4 mb-4" src={`/icons/open_in_new_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg`} alt="navigate to purchasing this book" height={10} width={10} />
               </h3>
             </div>
@@ -73,7 +73,7 @@ export default function Home() {
       </motion.div>
 
       {/* TODO: move to reusable or add somewhere meaningful. */}
-      <div className="flex relative w-full justify-end ">
+      <div className="flex relative w-full justify-end tabletAndBelow:mt-40">
         <div
           ref={container}
           style={{
@@ -85,7 +85,25 @@ export default function Home() {
             src={'/img/lili-phd-work.png'} width={400} height={250} alt=""
             className="h-auto w-full rounded shadow-2xl"
           />
-          <Link href={WORKS_DATA[0].url} className="bg-red-900 rounded absolute -right-10 -top-[3rem] p-4 border shadow-2xl">
+          <Link href={WORKS_DATA[2].url} className="bg-red-900 underline rounded absolute -right-10 -top-[3rem] p-4 border shadow-2xl tabletAndBelow:mr-10 block">
+            View more details
+            {/* <Image className="w-4 h-4 mb-4" src={`/icons/open_in_new_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg`} alt="" height={10} width={10} /> */}
+          </Link>
+        </div >
+      </div>
+      <div className="flex relative w-full my-40">
+        <div
+          ref={container}
+          style={{
+            transform: isInView ? "none" : "translateX(200px)",
+            opacity: isInView ? 1 : 0,
+            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
+          }}>
+          <Image
+            src={WORKS_DATA[1].img} width={400} height={250} alt=""
+            className="h-auto w-full rounded shadow-2xl"
+          />
+          <Link href={WORKS_DATA[1].url} className="bg-red-900 underline rounded absolute left-0 -top-[3rem] p-4 border shadow-2xl tabletAndBelow:mr-10 block">
             View more details
             {/* <Image className="w-4 h-4 mb-4" src={`/icons/open_in_new_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg`} alt="" height={10} width={10} /> */}
           </Link>

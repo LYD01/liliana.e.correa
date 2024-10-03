@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`bg-gradient-to-r from-[#202123] to-[#323236]`}>
+      <body className={`bg-gradient-to-r from-[#4D4E51] to-[#463A3A]`}>
         <Header />
         <main className="w-full mx-auto tabletAndBelow:px-4 max-w-[1280px] pl-[4rem]">
           {children}

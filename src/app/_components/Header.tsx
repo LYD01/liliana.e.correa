@@ -42,13 +42,13 @@ export default function Header() {
                         <label htmlFor="#menu-button" className="block text-white h-full cursor-pointer">Menu</label>
                     </button>
                 </div >
-                <div className={`rounded bg-blue-500 w-[10rem] z-10 ${isMenuOpen ? "block" : "hidden"}`}>
+                <div className={`rounded bg-menu-gradient w-[10rem] z-10 ${isMenuOpen ? "block" : "hidden"}`}>
                     <ul className=" flex flex-col  select-text text-white">
                         {MENU_ITEMS.map((item) => (
                             <li key={item.href} className="w-full">
                                 <Link
                                     href={item.href}
-                                    className={`flex items-center justify-between py-4 pl-1 pr-4 ${currentPath === item.href ? 'bg-blue-600' : 'hover:bg-blue-600'
+                                    className={`flex items-center justify-between py-4 pl-1 pr-4 ${currentPath === item.href ? 'bg-[#A67C52]' : 'hover:bg-[#3C3C3B]'
                                         }`}
                                     onClick={() => setIsMenuOpen(false)}
                                 >
