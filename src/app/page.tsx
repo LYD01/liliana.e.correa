@@ -1,15 +1,16 @@
 "use client"
 import {
   motion,
-  // useInView
+  useInView
 } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-// import { useRef } from "react";
+import { useRef } from "react";
+import { WORKS_DATA } from "./_constants";
 
 export default function Home() {
-  // const container = useRef(null);
-  // const isInView = useInView(container, { once: true });
+  const container = useRef(null);
+  const isInView = useInView(container, { once: true });
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -45,15 +46,6 @@ export default function Home() {
           className="max-w-md	 w-full max-md:w-[15rem] py-4 rounded-lg tabletAndAbove:pt-[10rem]"
         />
       </div>
-      {/* TODO: move to reusable or add somewhere meaningful. */}
-      {/* <div
-      ref={container}
-      style={{
-        transform: isInView ? "none" : "translateX(-200px)",
-        opacity: isInView ? 1 : 0,
-        transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
-      }}
-      > */}
       <motion.div
         className="w-full"
         variants={containerVariants}
@@ -79,9 +71,26 @@ export default function Home() {
           <Link className="tablet-[9rem] block max-w-fit p-4 mt-4 text-white hover:scale-[1.1] transition tabletAndBelow:float-right" href={'/about'}>{'About Liliana and her works ->'}</Link>
         </motion.div>
       </motion.div>
-      {/* </div> */}
-    </div >
 
-
+      {/* TODO: move to reusable or add somewhere meaningful. */}
+      <div className="flex relative w-full justify-end ">
+        <div
+          ref={container}
+          style={{
+            transform: isInView ? "none" : "translateX(-200px)",
+            opacity: isInView ? 1 : 0,
+            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
+          }}>
+          <Image
+            src={'/img/lili-phd-work.png'} width={400} height={250} alt=""
+            className="h-auto w-full rounded shadow-2xl"
+          />
+          <Link href={WORKS_DATA[0].url} className="bg-red-900 rounded absolute -right-10 -top-[3rem] p-4 border shadow-2xl">
+            View more details
+            {/* <Image className="w-4 h-4 mb-4" src={`/icons/open_in_new_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg`} alt="" height={10} width={10} /> */}
+          </Link>
+        </div >
+      </div>
+    </div>
   );
 }

@@ -12,7 +12,9 @@ const config: Config = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        'main-gradient-135': 'linear-gradient(135deg, #202123, #11141F, #323236)',
       },
+
       screens: {
         // Note: Tailwind does not support CSS variables for breakpoint values directly in the config.
         // These should align with values inside `/styles/variables/_screens.scss`
