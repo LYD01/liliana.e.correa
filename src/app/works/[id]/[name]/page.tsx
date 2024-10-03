@@ -3,6 +3,7 @@ import { WORKS_DATA } from "@/app/_constants";
 import { useParams } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import { p } from "framer-motion/client";
 
 export default function ArticlePage() {
     // TODO: cmolpete articles
@@ -30,6 +31,14 @@ export default function ArticlePage() {
                             :
                             <Image src={`${card.img}`} alt={"card.img.alt"} width={200} height={200} />
                         }
+                        {card.summary ? (
+                            <div className="">
+                                <h2 className="px-4 mt-6">{`By Liliana Correa`}</h2>
+                                <p className="px-6 py-4">{card.summary}</p>
+                            </div>
+                        ) : (
+                            ''
+                        )}
                     </div>
 
                 </div>

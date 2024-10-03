@@ -53,7 +53,7 @@ export default function Home() {
         animate="visible"
       >
         <motion.h4 className="text-[2rem] pb-10" variants={itemVariants}>Most recent work</motion.h4>
-        <motion.div className="flex justify-start tabletAndBelow:justify-end" variants={itemVariants}>
+        <motion.div className="flex justify-start tablet:justify-end  " variants={itemVariants}>
           <Link href={`https://www.amazon.com.au/nena-m%C3%A1gica-Liliana-Correa/dp/8419339431`}
             className="h-auto w-[20rem] max-md:w-[15rem] block relative tablet:mr-[9rem]">
             <Image
@@ -91,7 +91,7 @@ export default function Home() {
           </Link>
         </div >
       </div>
-      <div className="flex relative w-full my-40">
+      <div className="flex relative w-full  my-40">
         <div
           ref={container}
           style={{
@@ -103,7 +103,7 @@ export default function Home() {
             src={WORKS_DATA[1].img} width={400} height={250} alt=""
             className="h-auto w-full rounded shadow-2xl"
           />
-          <Link href={WORKS_DATA[1].url} className="bg-red-900 underline rounded absolute left-0 -top-[3rem] p-4 border shadow-2xl tabletAndBelow:mr-10 block">
+          <Link href={WORKS_DATA[1].url} className="bg-red-900 underline rounded absolute -left-10 -top-[3rem] p-4 border shadow-2xl tabletAndBelow:mr-10 block">
             View more details
             {/* <Image className="w-4 h-4 mb-4" src={`/icons/open_in_new_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg`} alt="" height={10} width={10} /> */}
           </Link>
