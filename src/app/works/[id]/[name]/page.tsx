@@ -17,15 +17,15 @@ export default function ArticlePage() {
     }
     return (
 
-        <div className="   tabletAndBelow:px-4">
-            <div className="px-1 pt-20 h-full  container mx-auto">
-                <div className="w-[50%] min-h-[45rem] border-t select-text text-white">
+        <div className="tabletAndBelow:px-4">
+            <div className="px-1 pt-20 h-full mx-auto">
+                <div className="min-h-[45rem] border-t select-text text-white">
                     <div>
                         <h1 className="my-4">{card.title}</h1>
                     </div>
                     <div className="w-fit">
                         {card.externalUrl ?
-                            <Link href={card.externalUrl} target="_blank" >
+                            <Link href={card.externalUrl} target="_blank" className="max-w-fit flex" >
                                 <Image src={`${card.img}`} alt={"card.img.alt"} width={200} height={200} />
                             </Link>
                             :
