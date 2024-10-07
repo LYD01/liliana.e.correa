@@ -42,8 +42,8 @@ export default function Home() {
           <h3 className="my-4">Argentinian writer and academic</h3>
           <p className="my-4">An esteemed Argentinian academic, Liliana has made significant strides in the literary world, blending her cultural insights with her educational expertise to enrich her readers and students alike.</p>
         </div>
-        <Image src={`/img/lili-photo.jpeg`} alt="Photo of Liliana" width={200} height={200}
-          className="max-w-md	w-full max-md:w-[15rem] py-4 rounded-lg tabletAndAbove:pt-[10rem]"
+        <Image src={`/img/liliFront.png`} alt="Photo of Liliana" width={200} height={200}
+          className="max-w-md	w-full max-md:w-[15rem]  rounded-[20px] "
         />
       </div>
       <motion.div
