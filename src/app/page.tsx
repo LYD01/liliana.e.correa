@@ -36,27 +36,29 @@ export default function Home() {
   return (
     <div className="flex items-center tabletAndBelow:gap-10 flex-col tabletAndBelow:items-start mx-auto py-10 tabletAndBelow:pt-24 tabletAndBelow:pl-0">
       <div className=" tabletAndBelow:border-b-2 flex gap-10 tabletAndBelow:flex-col">
-        <div className="[&_p]:my-4">
+        <div className="[&_p]:my-4 pt-[1rem]">
           <h1 className={styles.heading}>Liliana E. Correa</h1>
           {/* <h2 className="my-4">Writer, Adult Educator, Language Teacher</h2>
           <p className="my-4">Liliana E. Correa is a dedicated educator and prolific writer, known for her contributions to adult education and language teaching. Her passion for learning and teaching has inspired many.</p>
           <h3 className="my-4">Argentinian writer and academic</h3>
           <p className="my-4">An esteemed Argentinian academic, Liliana has made significant strides in the literary world, blending her cultural insights with her educational expertise to enrich her readers and students alike.</p> */}
-          <p>
-            Liliana is an Argentinean bilingual writer and adult literacy educator. She resides in Australia since 1984. She attained a Doctoral degree from Western Sydney University in 2012.
-          </p>
-          <p>
-            Liliana is interested in cross-disciplinary work and creative participatory research methodologies.
-          </p>
-          <p>
-            She is currently co-writing a book documenting the work of racialized theatre artists in Sydney during the 1990’s.
-          </p>
-          <p>
-            Liliana lives and works in Bundjalung Country. (Sydney, NSW)
-          </p>
+          <div className="[&_p]:text-[18px]">
+            <p>
+              Liliana is an Argentinean bilingual writer and adult literacy educator. She resides in Australia since 1984. She attained a Doctoral degree from Western Sydney University in 2012.
+            </p>
+            <p>
+              Liliana is interested in cross-disciplinary work and creative participatory research methodologies.
+            </p>
+            <p>
+              She is currently co-writing a book documenting the work of racialized theatre artists in Sydney during the 1990’s.
+            </p>
+            <p>
+              Liliana lives and works in Bundjalung Country. (Sydney, NSW)
+            </p>
+          </div>
         </div>
-        <Image src={`/img/liliFront.png`} alt="Photo of Liliana" width={200} height={200}
-          className="max-w-md	w-full max-md:w-[15rem]  rounded-[20px] "
+        <Image src={`/img/lili-blue.jpeg`} alt="Photo of Liliana" width={200} height={200}
+          className="max-w-md	w-full max-md:w-[15rem] rounded-[5px] "
         />
       </div>
       <motion.div
