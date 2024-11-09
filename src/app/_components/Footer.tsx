@@ -8,7 +8,12 @@ export default function Footer() {
                         <p className="min-w-fit after:content-['|'] after:px-1">© Copyright 2024</p>
                         <Image src={`/img/LEC-mural.jpg`} width={24} height={24} alt={`Liliana Logo`} className="rounded-[50%]" />
                     </div>
-                    <p className="max-w-[40rem] tabletAndBelow:max-w-[30rem] text-[12px]">I acknowledge traditional owners of Country throughout Australia. I recognised their continuing connection to lands, waters, and communities and the Widjabul Wiyebal people of the Bundjalung Nation, traditional custodians of the land on which I now live.</p>
+                    <div className="flex flex-col items-end [&_p]:py-[0.15rem] max-w-[600px]">
+                        <p>I acknowledge traditional owners of Country throughout Australia. </p>
+                        <p>I recognised their continuing connection to lands, waters and communities.</p>
+                        <p>I acknowledge the Widjabul Wiyebal people of the Bundjalung Nation,</p>
+                        <p>custodians of the land on which I am living.</p>
+                    </div>
                 </div>
             </div>
         </footer>

@@ -33,7 +33,7 @@ export default function ArticlePage() {
                         }
                         {card.summary ? (
                             <div className="">
-                                <h2 className="px-4 mt-6">{`By Liliana Correa`}</h2>
+                                {/* <h2 className="px-4 mt-6">{`By Liliana Correa`}</h2> */}
                                 <p className="px-6 py-4">{card.summary}</p>
                             </div>
                         ) : (

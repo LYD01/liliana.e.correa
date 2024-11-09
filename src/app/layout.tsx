@@ -1,8 +1,15 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Playfair_Display } from '@next/font/google';
+
 import "./globals.css";
 import Header from "./_components/Header";
 import Footer from "./_components/Footer";
+
+const playfairDisplay = Playfair_Display({
+  subsets: ['latin'],
+  weight: ['400', '700'], // Specify weights as needed
+});
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`bg-gradient-to-r from-[#4D4E51] to-[#463A3A]`}>
+      <body className={`bg-gradient-to-r from-[#323334] to-[#313130] ${playfairDisplay.className}`}>
         <Header />
         <main className="w-full mx-auto tabletAndBelow:px-4 max-w-[1280px] pl-[4rem]">
           {children}

@@ -33,7 +33,7 @@ export default function Header() {
             <div className="absolute">
                 <div className="opacity-99" >
                     <button onClick={handleMenuButtonClick} id="menu-button"
-                        className=" rounded w-[3rem] h-[3rem] gap-1 flex items-center flex-col-reverse">
+                        className=" rounded w-[5rem] h-[5rem] gap-1 flex items-center flex-col-reverse">
                         <Image
                             className="h-full w-full rounded-[50%]"
                             src="/img/LEC-mural.jpg"
