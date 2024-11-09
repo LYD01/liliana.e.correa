@@ -37,10 +37,15 @@ export default function Home() {
       <div className=" tabletAndBelow:border-b-2 flex gap-10 tabletAndBelow:flex-col">
         <div>
           <h1 className="">Liliana E. Correa</h1>
-          <h2 className="my-4">Writer, Adult Educator, Language Teacher</h2>
+          {/* <h2 className="my-4">Writer, Adult Educator, Language Teacher</h2>
           <p className="my-4">Liliana E. Correa is a dedicated educator and prolific writer, known for her contributions to adult education and language teaching. Her passion for learning and teaching has inspired many.</p>
           <h3 className="my-4">Argentinian writer and academic</h3>
-          <p className="my-4">An esteemed Argentinian academic, Liliana has made significant strides in the literary world, blending her cultural insights with her educational expertise to enrich her readers and students alike.</p>
+          <p className="my-4">An esteemed Argentinian academic, Liliana has made significant strides in the literary world, blending her cultural insights with her educational expertise to enrich her readers and students alike.</p> */}
+          <p className="my-4">Liliana Correa is a bilingual Spanish-English writer and educator living in Bundjalung Country in the Northern Rivers. Liliana attained a Doctoral degree from Western Sydney University in 2013 and she has extensive experience working in the areas of community arts and adult education. She is currently working in the vocational education sector and is passionate about supporting adult literacy and lifelong learning.
+          </p>
+          <strong>
+            Liliana is currently researching the participation of radicalised artists  in the theatre industry in Sydney during the late 1980 and 1990’s.as well as continuing with her creative writing project.
+          </strong>
         </div>
         <Image src={`/img/liliFront.png`} alt="Photo of Liliana" width={200} height={200}
           className="max-w-md	w-full max-md:w-[15rem]  rounded-[20px] "
@@ -53,7 +58,8 @@ export default function Home() {
         animate="visible"
       >
         <motion.h4 className="text-[2rem] pb-10" variants={itemVariants}>Most recent work</motion.h4>
-        <motion.div className="flex justify-start tablet:justify-end  " variants={itemVariants}>
+        <motion.div className="flex justify-start tablet:justify-end" variants={itemVariants}>
+          {/* TODO: add to const */}
           <Link href={`https://www.amazon.com.au/nena-m%C3%A1gica-Liliana-Correa/dp/8419339431`}
             className="h-auto w-[20rem] max-md:w-[15rem] block relative tablet:mr-[9rem]">
             <Image
