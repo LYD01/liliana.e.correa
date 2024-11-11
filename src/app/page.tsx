@@ -44,16 +44,13 @@ export default function Home() {
           <p className="my-4">An esteemed Argentinian academic, Liliana has made significant strides in the literary world, blending her cultural insights with her educational expertise to enrich her readers and students alike.</p> */}
           <div className="[&_p]:text-[18px]">
             <p>
-              Liliana is an Argentinean bilingual writer and adult literacy educator. She resides in Australia since 1984. She attained a Doctoral degree from Western Sydney University in 2012.
+              Liliana is an Argentinean bilingual writer and adult literacy educator. She attained a Doctoral degree from Western Sydney University in 2012.
             </p>
             <p>
-              Liliana is interested in cross-disciplinary work and creative participatory research methodologies.
+              Liliana is interested in cross-disciplinary work and creative participatory research methodologies. She is currently co-writing a book documenting the work of racialized theatre artists in Sydney during the 1990’s.
             </p>
             <p>
-              She is currently co-writing a book documenting the work of racialized theatre artists in Sydney during the 1990’s.
-            </p>
-            <p>
-              Liliana lives and works in Bundjalung Country. (Sydney, NSW)
+              She has resided in Australia since 1984 and currently lives and works on Bundjalung County in the northern rivers, NSW.
             </p>
           </div>
         </div>
