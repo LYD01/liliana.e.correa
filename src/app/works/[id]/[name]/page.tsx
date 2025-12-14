@@ -3,7 +3,6 @@ import { WORKS_DATA } from "@/app/_constants";
 import { useParams } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { p } from "framer-motion/client";
 
 export default function ArticlePage() {
     // TODO: cmolpete articles
