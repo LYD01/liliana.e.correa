@@ -1,0 +1,228 @@
+import { summary } from "framer-motion/client";
+
+// Type definitions for better type safety
+export type WorkCategory = 
+  | "Children's Literature"
+  | "Exhibition"
+  | "Academic Research"
+  | "Academic Article"
+  | "Poetry"
+  | "Creative Writing"
+  | "Documentary";
+
+export type WorkTag = 
+  | "bilingual"
+  | "migration"
+  | "identity"
+  | "nature"
+  | "belonging"
+  | "collaboration"
+  | "latin-american"
+  | "photography"
+  | "testimonials"
+  | "multidisciplinary"
+  | "research"
+  | "academic"
+  | "poetry"
+  | "body"
+  | "transformation"
+  | "pandemic"
+  | "covid-19"
+  | "creativity"
+  | "indigenous"
+  | "theatre"
+  | "education"
+  | "literacy"
+  | "pedagogy"
+  | "cuba"
+  | "memory"
+  | "gender"
+  | "feminism"
+  | "documentary"
+  | "video"
+  | "craft";
+
+export interface Work {
+  id: number;
+  title: string;
+  subTitle?: string;
+  description: string;
+  url: string;
+  img: string;
+  externalUrl?: string;
+  summary?: string;
+  artist?: string;
+  category: WorkCategory;
+  tags: WorkTag[];
+}
+
+export const WORKS_DATA: Work[] = [
+  {
+    id: 1,
+    title: 'La Nena Mágica',
+    description: 'La nena mágica tells the story of a young girl who is forced to leave her homeland and grow up in a foreign culture.',
+    url: "works/1/la-nena-magica",
+    img: "/img/la-nene-majica.jpeg",
+    externalUrl: 'https://www.amazon.com.au/nena-m%C3%A1gica-Liliana-Correa/dp/8419339431',
+    summary: 'A beautifully illustrated, bilingual children"s book that follows the journey of a young girl learning to embrace her new surroundings and culture. La Nena Mágica is a heartwarming tale for children aged 0 to 5, told in both Spanish and English, that explores the power of nature, identity, and belonging. Through simple yet profound storytelling, Liliana Correa captures the essence of growing up between two worlds, showing young readers that home can be found wherever you are, and harmony can be felt in nature and within yourself.',
+    artist: 'Illustrations by Mariana Caballero.',
+    category: "Children's Literature",
+    tags: ["bilingual", "migration", "identity", "nature", "belonging"]
+  },
+  {
+    id: 2,
+    title: 'Syncretic',
+    subTitle: "Stories from Latin Americans in Australia",
+    description: "Syncretic is a collaboration between Sydney based photographer Shane Rozario and myself...",
+    url: "works/2/syncretic",
+    img: "/img/Syncretic-img.png",
+    summary: 'This collaborative exhibition explores the creative achievements of Sydney-based Latin American artists, challenging preconceptions and offering a fresh perspective on their contributions to Australian culture. Through powerful testimonials, photography, and soundscapes, Syncretic brings to life the personal and professional journeys of artists working across film, music, ceramics, poetry, and more. The exhibition not only highlights their interdisciplinary practices but also captures the essence of a rich and evolving cultural memory.',
+    artist: 'Photography by Shane Rozario and soundscapes by Carlos Arango.',
+    category: "Exhibition",
+    tags: ["collaboration", "latin-american", "photography", "testimonials", "multidisciplinary", "migration", "identity"]
+  },
+  {
+    id: 3,
+    title: 'The Politics Of Cultural Visibility',
+    description: 'This professional doctorate is an empirical research grounded in theoretical and creative methodologies. It has produced work that combines scholarly research, creative arts publication and academic writing...',
+    url: "/works/3/the-politicss-of-cultural-visibility",
+    img: "/img/lili-phd-work.png",
+    summary: 'This professional doctorate blends empirical research with creative arts practice, highlighting the experiences of Latin American artists in Sydney. It explores themes of cultural diversity, identity formation, and the intersection of memory and creativity. Through academic writing, artistic exhibitions, and community engagement, this work challenges preconceived notions of Latin American arts and culture in Australia. With a focus on building a cross-disciplinary dialogue, it presents a dynamic contribution to the visibility and voice of Latin American artists.',
+    externalUrl: 'https://researchdirect.westernsydney.edu.au/islandora/object/uws:15687',
+    category: "Academic Research",
+    tags: ["research", "latin-american", "migration", "identity", "academic", "memory", "multidisciplinary"]
+  },
+  {
+    id: 4,
+    title: 'Cuerpos',
+    description: '',
+    url: "/works/4/cuerpos",
+    img: "/img/AMWP-issue-5.png",
+    summary: 'Cuerpos invites readers to embrace the sensual and sacred connection between nature and self. Correa\'s evocative imagery of bodies floating, melting, and merging with the ocean reflects on the cycles of life, desire, and transformation. Rooted in the poet\'s personal experience, the poem also serves as a tribute to Yemanya and Alfonsina, with a lyrical meditation on freedom and release.',
+    externalUrl: 'https://australianmultilingualwriting.org/writing/liliana-correa-cuerpos',
+    category: "Poetry",
+    tags: ["poetry", "nature", "body", "transformation", "bilingual"]
+  },
+  {
+    id: 5,
+    title: 'Poetics in the Time of Pandemic. There is Always Going to be a Before and an After',
+    description: 'This paper reflects on the impact of lockdown in Sydney on artists and creatives. We share our personal story of how we imagined our lives would be before COVID-19 and the changes we observed after entering in pandemic mode...',
+    url: "/works/5/poetics-in-the-time-of-pandemic",
+    img: "/img/Poetics-in-the-Time-of-Pandemic.jpeg",
+    summary: "Abstract This paper reflects on the impact of lockdown in Sydney on artists and creatives. We share our personal story of how we imagined our lives would be before COVID-19 and the changes we observed after entering in pandemic mode. Intertwining images taken with a mobile phone and text, we offer our observations on the evolving new language that appears around us in supermarkets, on walls and on the footpath: signs determining social interactions and affecting behaviour. We also touch on the idea of how writing can bring us home and make us feel closer to our languages and countries of origin. We underline theatre's importance to tell stories from the time of the pandemic, when governments have been found wanting due to lack of care of the most vulnerable, in particular First Nations peoples. We reflect on the need for reinvention, accepting change, reassessing our human values and making present our links to the natural world. As the pandemic takes us from one stage to the next, we suggest that creativity is the one possible space that offers relief and hope and opens up possibilities to make sense of our new reality while contributing to a collective sense of humanity.",
+    externalUrl: 'https://epress.lib.uts.edu.au/journals/index.php/portal/article/view/7505',
+    category: "Academic Article",
+    tags: ["pandemic", "covid-19", "creativity", "indigenous", "nature", "theatre", "academic", "bilingual"]
+  },
+  {
+    id: 6,
+    title: 'From Little Words, Big Words Grow: Annotations on the Yo, Sí Puedo Experience in Brewarrina, Australia',
+    description: 'This article is a reflection on the application of the Cuban literacy methodology Yo, Sí Puedo to the Australian setting. The Yo, Sí Puedo / Yes, I Can! model developed in Cuba by the Instituto Pedagógico Latinoamericano y Caribeño, IPLAC (Institute of Pedagogy for Latin America and the Caribbean) has been successfully implemented across the Global South as a strategy of adult literacy...',
+    url: "/works/6/from-little-words",
+    img: "/img/From-Little-Words.png",
+    summary: 'This article is a reflection on the application of the Cuban literacy methodology Yo, Sí Puedo to the Australian setting. The Yo, Sí Puedo / Yes, I Can! model developed in Cuba by the Instituto Pedagógico Latinoamericano y Caribeño, IPLAC (Institute of Pedagogy for Latin America and the Caribbean) has been successfully implemented across the Global South as a strategy of adult literacy. It is a legacy of our Latin American revolutionary roots, with its origin in the Freirean pedagogy of the oppressed. Expanding across continents this model continues to teach reading and writing to disenfranchised adults in marginal and Indigenous communities, from the Argentinean Chaco to Brewarrina in northern NSW, Australia. Its aim is to contribute to the hope of improving the health and educational outcomes of the country\'s First Peoples. This article is indebted to conversations with the Cuban advisor of Yes, I Can!, José Manuel Chala Leblanch. Observing him working in the classroom setting of Brewarrina touched me at different levels: personally because it reminded me of my own family experiences with the education system in my country, Argentina; and professionally as an educator negotiating different languages and cultures. It also reinforced my belief in the importance of incorporating Indigenous ways of learning and teaching to Western styles of teaching and learning. I built this reflection moving from personal and poetic—visual and textual—narratives and observations to academic interventions informed by researched literature on adult and Indigenous education.',
+    externalUrl: 'https://epress.lib.uts.edu.au/journals/index.php/portal/article/view/5392',
+    category: "Academic Article",
+    tags: ["education", "literacy", "indigenous", "pedagogy", "cuba", "academic", "latin-american"]
+  },
+  {
+    id: 7,
+    title: 'El lugar de la memoria: Where Memory Lies',
+    description: "Memory, belonging and continuity beginning with history, unthinkable events somehow unnamed that will remain somewhere, that will get retold, once and once again. Letting the storyteller continue unravelling and recuperating moments. Memory giving us context and place, a geographic and historical site with references to the past and, at the same time, placing us in an active present time, making my actions relevant to this here, and now, in a space of absolute belonging. Perhaps this is why we, migrants repeating our millenary customs with some sense of attachment, continue to transform the ordinary into the extraordinary and so then a story must be told. This article explores the distinctive roles that memory play in the context of migration. Memory dynamic is constructed in dialogue with others, and resides in artistic expression, or what Paul Willis calls cultural penetrations. Memory contextualizes our actions and functions as emotional sustenance. For those living outside their culture of origin, by choice or forced, there is a constant tension in our daily negotiations with the surrogate country: a tension between conflicting desires and responsibilities that memory helps to alleviate. Memory and the reinvention of one's histories mediate between current geographic locations and imaginary homes by providing a sense of place and belonging. Looking at the role that memory plays for Latin American migrants in Australia, I reflect on my own experiences utilizing a bilingual mode of expression that includes personal accounts, excerpts from artists' testimonials, and photographic documentation.",
+    url: "/works/7/where-memory-lies",
+    img: "/img/El-lugar-de-la-memoria.png",
+    summary: "La memoria, la pertenencia y la continuidad a partir de que la historia, los sucesos impensables y tal vez innombrables se queden en algún lado, se recuenten, una y otra vez. Dejando que el cuentista continúe tejiendo y recuperando momentos. La memoria nos contextualiza y nos ubica en un espacio histórico y geográfico con referencias al pasado y a la vez nos planta en un presente partícipe, activo de absoluta pertenencia. Le da relevancia a mis acciones presentes. Tal vez por eso los inmigrantes volvemos a repetir nuestras milenarias costumbres con más apego, lo cotidiano se transforma en una historia que hay que contar. Memory, belonging and continuity beginning with history, unthinkable events somehow unnamed that will remain somewhere, that will get retold, once and once again. Letting the storyteller continue unravelling and recuperating moments. Memory giving us context and place, a geographic and historical site with references to the past and, at the same time, placing us in an active present time, making my actions relevant to this here, and now, in a space of absolute belonging. Perhaps this is why we, migrants repeating our millenary customs with some sense of attachment, continue to transform the ordinary into the extraordinary and so then a story must be told. This article explores the distinctive roles that memory play in the context of migration. Memory dynamic is constructed in dialogue with others, and resides in artistic expression, or what Paul Willis calls cultural penetrations. Memory contextualizes our actions and functions as emotional sustenance. For those living outside their culture of origin, by choice or forced, there is a constant tension in our daily negotiations with the surrogate country: a tension between conflicting desires and responsibilities that memory helps to alleviate. Memory and the reinvention of one's histories mediate between current geographic locations and imaginary homes by providing a sense of place and belonging. Looking at the role that memory plays for Latin American migrants in Australia, I reflect on my own experiences utilizing a bilingual mode of expression that includes personal accounts, excerpts from artists' testimonials, and photographic documentation.",
+    externalUrl: 'https://epress.lib.uts.edu.au/journals/index.php/portal/article/view/1348',
+    category: "Academic Article",
+    tags: ["memory", "migration", "latin-american", "bilingual", "identity", "belonging", "academic"]
+  },
+  {
+    id: 8,
+    title: 'Los Sentidos de la Noche (Senses of the Night)',
+    description: "One way to explore the complexities of senses, cultures and identities is through creativity and in conversations with other artists exchanging experiences or reflecting about personal journeys. I use creative prose, poetry and image-text compositions, for example in the form of postcards or collage. Creative conversations have facilitated an understanding of this country's complexities, and through this process I can make sense of my surroundings while sustaining a connection with places in Latin America I considered home. In this instance I invited Uruguayan painter Abigail Lutzen, trained in the Constructivist School of paint led by Torres Garcia and Tjanara Jaly Talbot, a young Indigenous woman from Sydney who supports Sydney Action for Juarez, a group that I established with other women to raise awareness about gender violence in Mexico. These are different representations of poetic and visual \"feminine sensitivities\" showing how we make sense of our immediate cultural environment in solidarity with others and engaging in creative collaborations as women artists.",
+    url: "/works/8/senses-of-the-night",
+    img: "/img/Los-Sentidos-de-la-Noche.png",
+    summary: "One way to explore the complexities of senses, cultures and identities is through creativity and in conversations with other artists exchanging experiences or reflecting about personal journeys. I use creative prose, poetry and image-text compositions, for example in the form of postcards or collage. Creative conversations have facilitated an understanding of this country's complexities, and through this process I can make sense of my surroundings while sustaining a connection with places in Latin America I considered home. In this instance I invited Uruguayan painter Abigail Lutzen, trained in the Constructivist School of paint led by Torres Garcia and Tjanara Jaly Talbot, a young Indigenous woman from Sydney who supports Sydney Action for Juarez, a group that I established with other women to raise awareness about gender violence in Mexico. These are different representations of poetic and visual \"feminine sensitivities\" showing how we make sense of our immediate cultural environment in solidarity with others and engaging in creative collaborations as women artists.",
+    externalUrl: 'https://epress.lib.uts.edu.au/journals/index.php/portal/article/view/2212',
+    category: "Creative Writing",
+    tags: ["poetry", "collaboration", "gender", "feminism", "indigenous", "latin-american", "bilingual", "identity"]
+  },
+  {
+    id: 9,
+    title: 'Araña',
+    description: '',
+    url: "/works/9/araña",
+    img: "/img/puentes-review-issue3.png",
+    category: "Poetry",
+    tags: ["poetry", "bilingual"]
+  },
+  {
+    id: 10,
+    title: 'Perdiendo el rastro',
+    description: '',
+    url: "/works/10/perdiendo-el-rastro",
+    img: "/img/puentes-review-issue3.png",
+    category: "Poetry",
+    tags: ["poetry", "bilingual"]
+  },
+  {
+    id: 11,
+    title: 'From Hermosillo to Hill End: Potter Lino Alvarez Carrasco',
+    description: "<iframe src='https://player.vimeo.com/video/23463046?h=fb2e54c9c0' width='640' height='480' frameborder='0' allow='autoplay; fullscreen; picture-in-picture' allowfullscreen></iframe><p><a href='https://vimeo.com/23463046'></a",
+    url: "/works/11/from-hermosillo-to-hill-end",
+    img: "/img/pic-of-vid.png",
+    summary: "A documentary video exploring the journey and work of potter Lino Alvarez Carrasco, tracing his path from Hermosillo to Hill End.",
+    category: "Documentary",
+    tags: ["documentary", "video", "latin-american", "craft", "migration"]
+  }
+];
+
+// Helper functions for filtering
+export const getAllCategories = (): WorkCategory[] => {
+  const categories = new Set<WorkCategory>();
+  WORKS_DATA.forEach(work => categories.add(work.category));
+  return Array.from(categories).sort();
+};
+
+export const getAllTags = (): WorkTag[] => {
+  const tags = new Set<WorkTag>();
+  WORKS_DATA.forEach(work => {
+    work.tags.forEach(tag => tags.add(tag));
+  });
+  return Array.from(tags).sort();
+};
+
+export const filterWorks = (filters: {
+  category?: WorkCategory;
+  tags?: WorkTag[];
+  searchQuery?: string;
+}): Work[] => {
+  let filtered = [...WORKS_DATA];
+
+  // Filter by category
+  if (filters.category) {
+    filtered = filtered.filter(work => work.category === filters.category);
+  }
+
+  // Filter by tags (works must have ALL selected tags)
+  if (filters.tags && filters.tags.length > 0) {
+    filtered = filtered.filter(work =>
+      filters.tags!.every(tag => work.tags.includes(tag))
+    );
+  }
+
+  // Filter by search query
+  if (filters.searchQuery) {
+    const query = filters.searchQuery.toLowerCase();
+    filtered = filtered.filter(work =>
+      work.title.toLowerCase().includes(query) ||
+      work.description.toLowerCase().includes(query) ||
+      work.summary?.toLowerCase().includes(query) ||
+      work.subTitle?.toLowerCase().includes(query) ||
+      work.tags.some(tag => tag.toLowerCase().includes(query)) ||
+      work.category.toLowerCase().includes(query)
+    );
+  }
+
+  return filtered;
+};

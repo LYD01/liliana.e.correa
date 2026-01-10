@@ -1,17 +1,24 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { Playfair_Display } from "next/font/google";
+import { Lora } from "next/font/google";
 
 import "./globals.css";
-import Header from "./_components/Header";
+import MinimalNav from "./_components/MinimalNav";
 import Footer from "./_components/Footer";
+import BackToTop from "./_components/BackToTop";
 
-const playfairDisplay = Playfair_Display({
+const lora = Lora({
   subsets: ['latin'],
-  weight: ['400', '700'], // Specify weights as needed
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-lora',
+  display: 'swap',
 });
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"],
+  variable: '--font-inter',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: "Liliana E Correa",
@@ -20,16 +27,20 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  modal,
 }: Readonly<{
   children: React.ReactNode;
+  modal: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`bg-gradient-to-r from-[#323334] to-[#313130] ${playfairDisplay.className}`}>
-        <Header />
-        <main className="w-full mx-auto tabletAndBelow:px-4 max-w-[1280px] pl-[4rem]">
+    <html lang="en" data-scroll-behavior="smooth">
+      <body className={`${lora.variable} ${inter.variable} font-serif`}>
+        <MinimalNav />
+        <main className="w-full mx-auto relative">
           {children}
         </main>
+        {modal}
+        <BackToTop />
         <Footer />
       </body>
     </html >
