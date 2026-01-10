@@ -33,6 +33,37 @@ export default function WorkModal({ params }: PageProps) {
     router.back();
   };
 
+  // Generate SEO-optimized title (same logic as layout.tsx)
+  const generateTitle = (work: typeof WORKS_DATA[0]) => {
+    const baseTitle = work.title;
+    const category = work.category;
+    const authorName = "Liliana E. Correa";
+
+    const titleWithCategory = `${baseTitle} - ${category} | ${authorName}`;
+    const titleWithoutCategory = `${baseTitle} | ${authorName}`;
+
+    if (titleWithCategory.length <= 60) {
+      return titleWithCategory;
+    } else if (titleWithoutCategory.length <= 60) {
+      return titleWithoutCategory;
+    } else {
+      const maxTitleLength = 60 - authorName.length - 3;
+      return `${baseTitle.slice(0, maxTitleLength)}... | ${authorName}`;
+    }
+  };
+
+  // Update document title on client-side navigation
+  useEffect(() => {
+    if (work) {
+      document.title = generateTitle(work);
+    }
+
+    // Cleanup: restore default title when component unmounts
+    return () => {
+      document.title = "Liliana E Correa";
+    };
+  }, [work]);
+
   // Lock scroll position immediately when modal mounts
   useEffect(() => {
     const wasOnHomePage = sessionStorage.getItem('wasOnHomePage') === 'true';

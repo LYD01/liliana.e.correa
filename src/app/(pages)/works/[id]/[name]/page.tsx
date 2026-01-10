@@ -3,7 +3,7 @@
 import { WorkModalContent } from "@/app/_components";
 import { WORKS_DATA } from "@/app/_constants";
 import { useRouter } from "next/navigation";
-import { use } from "react";
+import { use, useEffect } from "react";
 
 
 interface PageProps {
@@ -26,6 +26,39 @@ export default function WorkPage({ params }: PageProps) {
     const expectedUrl = `works/${id}/${decodedName}`;
     return normalizedWorkUrl === expectedUrl || work.url === `/works/${id}/${decodedName}`;
   });
+
+  // Generate SEO-optimized title (same logic as layout.tsx)
+  const generateTitle = (work: typeof WORKS_DATA[0]) => {
+    const baseTitle = work.title;
+    const category = work.category;
+    const authorName = "Liliana E. Correa";
+
+    const titleWithCategory = `${baseTitle} - ${category} | ${authorName}`;
+    const titleWithoutCategory = `${baseTitle} | ${authorName}`;
+
+    if (titleWithCategory.length <= 60) {
+      return titleWithCategory;
+    } else if (titleWithoutCategory.length <= 60) {
+      return titleWithoutCategory;
+    } else {
+      const maxTitleLength = 60 - authorName.length - 3;
+      return `${baseTitle.slice(0, maxTitleLength)}... | ${authorName}`;
+    }
+  };
+
+  // Update document title on client-side navigation
+  useEffect(() => {
+    if (work) {
+      document.title = generateTitle(work);
+    } else {
+      document.title = "Work | Liliana E. Correa";
+    }
+
+    // Cleanup: restore default title when component unmounts
+    return () => {
+      document.title = "Liliana E Correa";
+    };
+  }, [work]);
 
   if (!work) {
     return (
