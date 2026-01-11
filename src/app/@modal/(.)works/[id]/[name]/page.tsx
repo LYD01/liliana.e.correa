@@ -87,19 +87,19 @@ export default function WorkModal({ params }: PageProps) {
     <AnimatePresence>
       <motion.div
         className="fixed inset-0 z-50 flex items-center justify-center"
-        initial={{ opacity: 0 }}
+        initial={{ opacity: 1 }} // Start at opacity 1 to prevent white flash on iOS Safari
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-        style={{ backgroundColor: '#323334' }} // Prevent white flash on iOS Safari
+        style={{ backgroundColor: '#323334' }} // Prevent white flash on iOS Safari - matches body background
       >
-        {/* Backdrop */}
+        {/* Backdrop - Start at high opacity to prevent white flash, subtle fade-in */}
         <motion.div
           className="absolute inset-0 bg-black/80 backdrop-blur-sm"
-          initial={{ opacity: 0 }}
+          initial={{ opacity: 0.95 }} // Start nearly opaque to prevent white flash
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
           onClick={handleClose}
           style={{ backgroundColor: 'rgba(0, 0, 0, 0.8)' }} // Ensure backdrop color is set immediately
         />

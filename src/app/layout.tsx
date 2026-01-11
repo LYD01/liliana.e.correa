@@ -33,7 +33,7 @@ export default function RootLayout({
   modal: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-scroll-behavior="smooth">
+    <html lang="en" data-scroll-behavior="smooth" style={{ backgroundColor: '#323334' }}>
       <body className={`${lora.variable} ${inter.variable} font-serif`}>
         <MinimalNav />
         <main className="w-full mx-auto relative">
