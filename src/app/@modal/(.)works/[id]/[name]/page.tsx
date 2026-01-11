@@ -91,6 +91,7 @@ export default function WorkModal({ params }: PageProps) {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+        style={{ backgroundColor: '#323334' }} // Prevent white flash on iOS Safari
       >
         {/* Backdrop */}
         <motion.div
@@ -100,6 +101,7 @@ export default function WorkModal({ params }: PageProps) {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
           onClick={handleClose}
+          style={{ backgroundColor: 'rgba(0, 0, 0, 0.8)' }} // Ensure backdrop color is set immediately
         />
 
         {/* Modal Container */}

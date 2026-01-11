@@ -49,6 +49,7 @@ h3 {
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+  background-color: #323334; /* Match body background to prevent white flash on iOS Safari */
 }
 
 /* Custom scrollbar */
