@@ -9,7 +9,6 @@ import Link from "next/link";
 import { useRef, useEffect, useState, useMemo, useCallback } from "react";
 import { usePathname } from "next/navigation";
 import { WORKS_DATA, filterWorks, getAllCategories, getAllTags, type WorkCategory, type WorkTag } from "./_constants";
-import { ReadMoreWrapper } from "./_components";
 import styles from "../home.module.scss"
 
 export default function Home() {
@@ -431,128 +430,68 @@ export default function Home() {
                       variants={itemVariants}
                       className="group flex"
                     >
-                      <div className="w-full text-left bg-transparent rounded-lg overflow-hidden h-full flex flex-col p-1 -m-1 flex-1">
-                        {/* Image as link */}
-                        {normalizedUrl !== '#' ? (
-                          <Link
-                            href={normalizedUrl}
-                            onClick={handleNavigation}
-                            className="block focus:outline-none"
+                      {normalizedUrl !== '#' ? (
+                        <Link
+                          href={normalizedUrl}
+                          onClick={handleNavigation}
+                          className="w-full text-left bg-transparent overflow-hidden h-full flex flex-col focus:outline-none"
+                        >
+                          {/* Image - square corners */}
+                          <motion.div
+                            className="relative overflow-hidden mb-3 sm:mb-4 group/image"
+                            layoutId={`work-image-${work.id}`}
+                            transition={{ type: "tween", ease: [0.16, 1, 0.3, 1], duration: 0.4 }}
                           >
-                            <motion.div
-                              className="relative overflow-hidden mb-5 sm:mb-6 rounded-md group/image"
-                              layoutId={`work-image-${work.id}`}
-                              transition={{ type: "tween", ease: [0.16, 1, 0.3, 1], duration: 0.4 }}
-                            >
-                              <Image
-                                src={work.img}
-                                alt={work.title}
-                                width={400}
-                                height={250}
-                                className="w-full h-48 sm:h-56 md:h-64 object-cover group-hover/image:scale-105 transition-transform duration-300"
-                              />
-                              {/* Category badge - subtle */}
-                              <div className="absolute top-3 left-3">
-                                <span className="px-2.5 py-1 bg-gray-900/70 backdrop-blur-sm text-xs font-medium text-gray-200 rounded border border-gray-700/30">
-                                  {work.category}
-                                </span>
-                              </div>
-                              {/* Subtle overlay on hover */}
-                              <div className="absolute inset-0 bg-black/0 group-hover/image:bg-black/5 transition-colors pointer-events-none" />
-                            </motion.div>
-                          </Link>
-                        ) : (
-                          <div className="relative overflow-hidden mb-5 sm:mb-6 rounded-lg">
                             <Image
                               src={work.img}
                               alt={work.title}
                               width={400}
                               height={250}
-                              className="w-full h-48 sm:h-56 md:h-64 object-cover rounded-lg"
+                              className="w-full h-48 sm:h-56 md:h-64 object-cover group-hover:scale-105 transition-transform duration-300"
                             />
-                            {/* Category badge - subtle */}
-                            <div className="absolute top-3 left-3">
-                              <span className="px-2.5 py-1 bg-gray-900/70 backdrop-blur-sm text-xs font-medium text-gray-200 rounded border border-gray-700/30">
-                                {work.category}
-                              </span>
-                            </div>
-                          </div>
-                        )}
-
-                        {/* Content - not clickable */}
-                        <div className="flex-1 flex flex-col space-y-3 min-h-0">
-                          {/* Title - more prominent */}
+                            {/* Subtle overlay on hover */}
+                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors pointer-events-none" />
+                          </motion.div>
+                          
+                          {/* Title */}
                           <motion.h3
-                            className="text-xl sm:text-2xl font-bold text-white mb-1 leading-tight tracking-tight line-clamp-2 flex-shrink-0"
+                            className="text-base sm:text-lg font-bold text-gray-300 mb-1 leading-tight tracking-tight line-clamp-2 group-hover:text-gray-200 transition-colors"
                             layoutId={`work-title-${work.id}`}
                             transition={{ type: "tween", ease: [0.16, 1, 0.3, 1], duration: 0.4 }}
                             title={work.title}
                           >
                             {work.title}
                           </motion.h3>
-                          {/* Subtitle - better visibility */}
-                          {work.subTitle && (
-                            <p className="text-sm sm:text-base text-gray-200 font-medium leading-snug line-clamp-2 flex-shrink-0" title={work.subTitle}>{work.subTitle}</p>
-                          )}
-                          {/* Summary/Description - improved readability with ReadMore */}
-                          {work.summary ? (
-                            <div className="flex-1 min-h-0 flex flex-col">
-                              <ReadMoreWrapper
-                                text={work.summary}
-                                minLength={200}
-                                maxLength={150}
-                                className="text-sm sm:text-base text-gray-100 leading-relaxed flex-1"
-                              />
-                            </div>
-                          ) : work.description ? (
-                            <div className="flex-1 min-h-0 flex flex-col">
-                              <ReadMoreWrapper
-                                text={work.description}
-                                minLength={200}
-                                maxLength={150}
-                                className="text-sm sm:text-base text-gray-100 leading-relaxed flex-1"
-                              />
-                            </div>
-                          ) : (
-                            /* Spacer for cards without summary/description to push View details to bottom */
-                            <div className="flex-1 min-h-0"></div>
-                          )}
-                          {/* View details - more prominent CTA - always at bottom */}
-                          {normalizedUrl !== '#' ? (
-                            <div className="mt-auto pt-4 flex-shrink-0">
-                              <Link
-                                href={normalizedUrl}
-                                onClick={handleNavigation}
-                                className="block focus:outline-none"
-                              >
-                                <div className="bg-gray-200/5 hover:bg-gray-200/8 border border-gray-600/10 hover:border-gray-500/20 px-4 py-2.5 transition-all duration-300 group/button">
-                                  <span className="inline-flex items-center gap-2 text-sm font-medium text-gray-200 group-hover/button:text-white transition-colors">
-                                    View details
-                                    <svg className="w-3.5 h-3.5 group-hover/button:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                    </svg>
-                                  </span>
-                                </div>
-                              </Link>
-                            </div>
-                          ) : (
-                            <div className="mt-auto pt-4 flex-shrink-0">
-                              <div className="bg-gray-200/5 border border-gray-600/10 px-4 py-2.5">
-                                <span className="inline-flex items-center gap-2 text-sm font-medium text-gray-200">
-                                  View details
-                                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                  </svg>
-                                </span>
-                              </div>
-                            </div>
-                          )}
-                          {/* Artist credit - subtle but readable */}
+                          
+                          {/* Artist credit */}
                           {work.artist && (
-                            <p className="text-xs sm:text-sm text-gray-400 mt-2 font-normal leading-relaxed">{work.artist}</p>
+                            <p className="text-xs sm:text-sm text-gray-400 font-normal leading-relaxed">{work.artist}</p>
+                          )}
+                        </Link>
+                      ) : (
+                        <div className="w-full text-left bg-transparent overflow-hidden h-full flex flex-col">
+                          {/* Image - square corners */}
+                          <div className="relative overflow-hidden mb-3 sm:mb-4">
+                            <Image
+                              src={work.img}
+                              alt={work.title}
+                              width={400}
+                              height={250}
+                              className="w-full h-48 sm:h-56 md:h-64 object-cover"
+                            />
+                          </div>
+                          
+                          {/* Title */}
+                          <h3 className="text-base sm:text-lg font-bold text-gray-300 mb-1 leading-tight tracking-tight line-clamp-2">
+                            {work.title}
+                          </h3>
+                          
+                          {/* Artist credit */}
+                          {work.artist && (
+                            <p className="text-xs sm:text-sm text-gray-400 font-normal leading-relaxed">{work.artist}</p>
                           )}
                         </div>
-                      </div>
+                      )}
                     </motion.div>
                   );
                 })}
