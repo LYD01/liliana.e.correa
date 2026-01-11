@@ -35,7 +35,7 @@ export default function BackToTop() {
           exit={{ opacity: 0, scale: 0.8 }}
           transition={{ duration: 0.2 }}
           onClick={scrollToTop}
-          className="fixed bottom-6 right-4 sm:bottom-8 sm:right-8 z-40 p-2.5 sm:p-3 rounded-full text-gray-300 hover:text-white active:text-gray-200 transition-colors touch-manipulation"
+          className="fixed bottom-6 right-4 sm:bottom-8 sm:right-8 z-[60] md:z-40 p-2.5 sm:p-3 rounded-full bg-white/90 hover:bg-white border border-grey-400 shadow-lg text-grey-800 hover:text-grey-900 active:text-grey-700 transition-colors touch-manipulation focus:outline-none focus:ring-2 focus:ring-grey-500 focus:ring-offset-2"
           aria-label="Back to top"
         >
           <svg

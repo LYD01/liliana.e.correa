@@ -244,7 +244,7 @@ export default function Home() {
               <h1 className={`${styles.heading} text-5xl sm:text-6xl tabletAndBelow:text-4xl font-bold`}>
                 Liliana E. Correa
               </h1>
-              <div className="space-y-6 text-lg sm:text-xl tabletAndBelow:text-base leading-relaxed text-gray-300">
+              <div className="space-y-6 text-lg sm:text-xl tabletAndBelow:text-base leading-relaxed text-grey-800">
                 <p>
                   Liliana is an Argentinean bilingual writer and adult literacy educator. She attained a Doctoral degree from Western Sydney University in 2012.
                 </p>
@@ -274,7 +274,7 @@ export default function Home() {
 
       {/* Works Section */}
       <motion.section
-        className="py-20 tabletAndBelow:py-16 border-t border-gray-700/30"
+        className="py-20 tabletAndBelow:py-16 border-t border-grey-300"
         variants={containerVariants}
         initial={hasAnimated ? "visible" : "hidden"}
         animate={hasAnimated ? "visible" : undefined}
@@ -295,7 +295,7 @@ export default function Home() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   onClick={clearFilters}
-                  className="text-sm text-gray-300 hover:text-gray-200 transition-colors underline underline-offset-4 decoration-gray-500 hover:decoration-gray-400"
+                  className="text-sm text-grey-800 hover:text-grey-900 transition-colors underline underline-offset-4 decoration-grey-600 hover:decoration-grey-800 focus:outline-none focus:ring-2 focus:ring-grey-500 focus:ring-offset-2 rounded"
                 >
                   Clear filters
                 </motion.button>
@@ -308,9 +308,9 @@ export default function Home() {
                 <div className="flex flex-wrap gap-x-6 gap-y-2">
                   <button
                     onClick={() => setSelectedCategory(null)}
-                    className={`text-base font-semibold transition-all duration-200 pb-1 border-b-2 ${selectedCategory === null
-                      ? 'text-white border-white'
-                      : 'text-white border-transparent hover:border-gray-500'
+                    className={`text-base font-semibold transition-all duration-200 pb-1 border-b-2 focus:outline-none focus:ring-2 focus:ring-grey-500 focus:ring-offset-2 rounded ${selectedCategory === null
+                      ? 'text-grey-900 border-grey-900'
+                      : 'text-grey-800 border-transparent hover:border-grey-600'
                       }`}
                   >
                     All
@@ -319,9 +319,9 @@ export default function Home() {
                     <button
                       key={category}
                       onClick={() => setSelectedCategory(category)}
-                      className={`text-base font-normal transition-all duration-200 pb-1 border-b-2 ${selectedCategory === category
-                        ? 'text-white border-white'
-                        : 'text-gray-300 border-transparent hover:text-gray-200 hover:border-gray-600'
+                      className={`text-base font-normal transition-all duration-200 pb-1 border-b-2 focus:outline-none focus:ring-2 focus:ring-grey-500 focus:ring-offset-2 rounded ${selectedCategory === category
+                        ? 'text-grey-900 border-grey-900'
+                        : 'text-grey-800 border-transparent hover:text-grey-900 hover:border-grey-600'
                         }`}
                     >
                       {category}
@@ -334,12 +334,12 @@ export default function Home() {
             {/* Tag Filters */}
             <div className="mb-10">
               <div className="flex items-center justify-between mb-4">
-                <p className="text-sm text-gray-300 uppercase tracking-wider">Tags</p>
+                <p className="text-sm text-grey-700 uppercase tracking-wider">Tags</p>
                 <div className="flex items-center gap-3">
                   {selectedTags.size > 0 && (
                     <button
                       onClick={() => setSelectedTags(new Set())}
-                      className="text-sm text-gray-300 hover:text-gray-200 transition-colors underline underline-offset-4 decoration-gray-500 hover:decoration-gray-400"
+                      className="text-sm text-grey-800 hover:text-grey-900 transition-colors underline underline-offset-4 decoration-grey-600 hover:decoration-grey-800 focus:outline-none focus:ring-2 focus:ring-grey-500 focus:ring-offset-2 rounded"
                     >
                       Clear all
                     </button>
@@ -347,7 +347,7 @@ export default function Home() {
                   {availableTags.length > 12 && (
                     <button
                       onClick={() => setShowAllTags(!showAllTags)}
-                      className="text-sm text-gray-300 hover:text-gray-200 transition-colors"
+                      className="text-sm text-grey-800 hover:text-grey-900 transition-colors focus:outline-none focus:ring-2 focus:ring-grey-500 focus:ring-offset-2 rounded"
                     >
                       {showAllTags ? 'Less' : `All (${availableTags.length})`}
                     </button>
@@ -367,12 +367,12 @@ export default function Home() {
                         exit={{ opacity: 0 }}
                         onClick={() => toggleTag(tag)}
                         className={`text-sm transition-all duration-200 ${isSelected
-                          ? 'text-white font-bold underline underline-offset-2'
-                          : 'text-gray-300 font-normal hover:text-gray-200'
+                          ? 'text-grey-900 font-bold underline underline-offset-2'
+                          : 'text-grey-700 font-normal hover:text-grey-900'
                           }`}
                       >
                         <span>{formatTagName(tag)}</span>
-                        <span className={`ml-1 font-bold ${isSelected ? 'text-white' : 'text-gray-400'}`}>
+                        <span className={`ml-1 font-bold ${isSelected ? 'text-grey-900' : 'text-grey-600'}`}>
                           ({count})
                         </span>
                       </motion.button>
@@ -387,7 +387,7 @@ export default function Home() {
               <motion.div
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="mb-6 text-sm text-gray-400"
+                className="mb-6 text-sm text-grey-700"
               >
                 Showing {filteredWorks.length} of {WORKS_DATA.length} works
               </motion.div>
@@ -450,22 +450,22 @@ export default function Home() {
                               className="w-full h-48 sm:h-56 md:h-64 object-cover group-hover:scale-105 transition-transform duration-300"
                             />
                             {/* Subtle overlay on hover */}
-                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors pointer-events-none" />
+                            <div className="absolute inset-0 bg-white/0 group-hover:bg-white/20 transition-colors pointer-events-none" />
                           </motion.div>
-                          
+
                           {/* Title */}
                           <motion.h3
-                            className="text-base sm:text-lg font-bold text-gray-300 mb-1 leading-tight tracking-tight line-clamp-2 group-hover:text-gray-200 transition-colors"
+                            className="text-base sm:text-lg font-bold text-grey-900 mb-1 leading-tight tracking-tight line-clamp-2 group-hover:text-grey-700 transition-colors"
                             layoutId={`work-title-${work.id}`}
                             transition={{ type: "tween", ease: [0.16, 1, 0.3, 1], duration: 0.4 }}
                             title={work.title}
                           >
                             {work.title}
                           </motion.h3>
-                          
+
                           {/* Artist credit */}
                           {work.artist && (
-                            <p className="text-xs sm:text-sm text-gray-400 font-normal leading-relaxed">{work.artist}</p>
+                            <p className="text-xs sm:text-sm text-grey-700 font-normal leading-relaxed">{work.artist}</p>
                           )}
                         </Link>
                       ) : (
@@ -480,15 +480,15 @@ export default function Home() {
                               className="w-full h-48 sm:h-56 md:h-64 object-cover"
                             />
                           </div>
-                          
+
                           {/* Title */}
-                          <h3 className="text-base sm:text-lg font-bold text-gray-300 mb-1 leading-tight tracking-tight line-clamp-2">
+                          <h3 className="text-base sm:text-lg font-bold text-grey-900 mb-1 leading-tight tracking-tight line-clamp-2">
                             {work.title}
                           </h3>
-                          
+
                           {/* Artist credit */}
                           {work.artist && (
-                            <p className="text-xs sm:text-sm text-gray-400 font-normal leading-relaxed">{work.artist}</p>
+                            <p className="text-xs sm:text-sm text-grey-700 font-normal leading-relaxed">{work.artist}</p>
                           )}
                         </div>
                       )}
@@ -504,8 +504,8 @@ export default function Home() {
                 exit={{ opacity: 0, y: -20 }}
                 className="col-span-full text-center py-16"
               >
-                <p className="text-gray-400 text-lg mb-2">No works found</p>
-                <p className="text-gray-500 text-sm">Try adjusting your filters</p>
+                <p className="text-grey-600 text-lg mb-2">No works found</p>
+                <p className="text-grey-700 text-sm">Try adjusting your filters</p>
               </motion.div>
             )}
           </AnimatePresence>

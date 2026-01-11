@@ -86,26 +86,26 @@ export default function WorkModal({ params }: PageProps) {
   return (
     <AnimatePresence>
       <motion.div
-        className="fixed inset-0 z-50 flex items-center justify-center"
+        className="fixed inset-0 z-50 flex items-start md:items-center justify-start md:justify-center py-0 md:py-4"
         initial={{ opacity: 1 }} // Start at opacity 1 to prevent white flash on iOS Safari
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-        style={{ backgroundColor: '#323334' }} // Prevent white flash on iOS Safari - matches body background
+        style={{ backgroundColor: 'var(--color-bg-primary)' }} // Prevent flash on iOS Safari - matches body background
       >
         {/* Backdrop - Start at high opacity to prevent white flash, subtle fade-in */}
         <motion.div
-          className="absolute inset-0 bg-black/80 backdrop-blur-sm"
-          initial={{ opacity: 0.95 }} // Start nearly opaque to prevent white flash
+          className="absolute inset-0 bg-white/80 backdrop-blur-sm"
+          initial={{ opacity: 0.95 }} // Start nearly opaque to prevent flash
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
           onClick={handleClose}
-          style={{ backgroundColor: 'rgba(0, 0, 0, 0.8)' }} // Ensure backdrop color is set immediately
+          style={{ backgroundColor: 'color-mix(in srgb, var(--color-bg-secondary) 80%, transparent)' }} // Ensure backdrop color is set immediately
         />
 
         {/* Modal Container */}
-        <div className="relative w-full h-screen max-h-screen md:w-[92%] md:h-[96vh] lg:w-[90%] lg:h-[94vh] xl:w-[88%] xl:h-[92vh] md:max-h-[96vh] lg:max-h-[94vh] xl:max-h-[92vh] flex items-center justify-center my-0 md:my-auto p-0 md:p-4 lg:p-6 xl:p-8 z-10">
+        <div className="relative w-full h-full md:h-[96vh] lg:h-[94vh] xl:h-[92vh] md:w-[92%] lg:w-[90%] xl:w-[88%] md:max-h-[96vh] lg:max-h-[94vh] xl:max-h-[92vh] flex items-start md:items-center justify-start md:justify-center px-0 md:px-4 lg:px-6 xl:px-8 z-10">
           <WorkModalContent work={work} onClose={handleClose} />
         </div>
       </motion.div>

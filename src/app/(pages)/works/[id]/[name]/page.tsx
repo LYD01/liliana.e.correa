@@ -64,10 +64,10 @@ export default function WorkPage({ params }: PageProps) {
     return (
       <div className="min-h-screen flex items-center justify-center night-sky-background">
         <div className="text-center">
-          <h1 className="text-2xl font-bold mb-4 text-white">Work not found</h1>
+          <h1 className="text-2xl font-bold mb-4 text-grey-900">Work not found</h1>
           <button
             onClick={() => router.push('/')}
-            className="text-blue-500 hover:underline"
+            className="text-grey-700 hover:text-grey-900 hover:underline focus:outline-none focus:ring-2 focus:ring-grey-500 focus:ring-offset-2 rounded"
           >
             Return to home
           </button>
@@ -81,8 +81,8 @@ export default function WorkPage({ params }: PageProps) {
   };
 
   return (
-    <div className="min-h-screen night-sky-background flex items-center justify-center p-0 md:p-4 lg:p-6 xl:p-8 overflow-y-auto">
-      <div className="w-full h-screen max-h-screen md:w-[92%] md:h-[96vh] lg:w-[90%] lg:h-[94vh] xl:w-[88%] xl:h-[92vh] md:max-h-[96vh] lg:max-h-[94vh] xl:max-h-[92vh] flex items-center justify-center my-0 md:my-auto">
+    <div className="min-h-screen night-sky-background flex items-start md:items-center justify-center py-0 md:py-4 px-0 md:px-4 lg:px-6 xl:px-8 overflow-y-auto">
+      <div className="w-full h-full max-h-[calc(100vh-2rem)] md:h-[96vh] lg:h-[94vh] xl:h-[92vh] md:w-[92%] lg:w-[90%] xl:w-[88%] md:max-h-[96vh] lg:max-h-[94vh] xl:max-h-[92vh] flex items-start md:items-center justify-center">
         <WorkModalContent work={work} onClose={handleClose} />
       </div>
     </div>

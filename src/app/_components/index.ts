@@ -5,6 +5,7 @@ import WorkModal from "./WorkModal";
 import WorkModalContent from "./WorkModalContent";
 import ReadMore from "./ReadMore";
 import ReadMoreWrapper from "./ReadMoreWrapper";
+import ThemeToggle from "./ThemeToggle";
 
 export {
     BackToTop,
@@ -14,4 +15,5 @@ export {
     Footer,
     ReadMore,
     ReadMoreWrapper,
+    ThemeToggle,
 }

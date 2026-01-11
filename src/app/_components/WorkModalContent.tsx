@@ -76,57 +76,82 @@ export default function WorkModalContent({ work, onClose }: WorkModalContentProp
 function StoryModal({ work, onClose }: { work: Work; onClose: () => void }) {
   return (
     <motion.div
-      className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-sm shadow-2xl w-full h-full overflow-hidden flex flex-col pointer-events-auto border-0 md:border border-gray-700/50"
-      initial={{ scale: 0.85, opacity: 0 }}
-      animate={{ scale: 1, opacity: 1 }}
-      exit={{ scale: 0.85, opacity: 0 }}
+      className="relative bg-gradient-to-br from-white via-grey-50 to-white rounded-none md:rounded-sm shadow-2xl w-full h-full max-h-full overflow-hidden flex flex-col pointer-events-auto border-0 md:border border-grey-300"
+      initial={{ scale: 0.95, opacity: 0, y: 0 }}
+      animate={{ scale: 1, opacity: 1, y: 0 }}
+      exit={{ scale: 0.95, opacity: 0, y: 0 }}
       transition={{
         type: "tween",
         ease: [0.16, 1, 0.3, 1],
         duration: 0.5,
         opacity: { duration: 0.4 }
       }}
+      style={{ originY: 0 }}
     >
       {/* Close Button */}
       <div className="absolute top-2 right-2 sm:top-4 sm:right-4 md:top-6 md:right-6 z-50 flex flex-col items-center gap-1">
         <motion.button
           onClick={onClose}
-          className="w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center transition-colors touch-manipulation text-white hover:text-gray-300 underline hover:no-underline 0"
+          className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/90 hover:bg-grey-100 border border-grey-300 flex items-center justify-center transition-colors touch-manipulation text-grey-900 hover:text-grey-800 underline hover:no-underline shadow-lg focus:outline-none focus:ring-2 focus:ring-grey-500 focus:ring-offset-2"
           aria-label="Close modal"
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.3 }}
         >
           <div className="flex items-center flex-col">
-            <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-4 h-4 sm:w-5 sm:h-5 text-grey-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             </svg>
-            <span className="text-xs  font-medium">ESC</span>
+            <span className="text-xs font-medium text-grey-800">ESC</span>
 
           </div>
         </motion.button>
       </div>
 
       {/* Scrollable Content */}
-      <div className="overflow-y-auto flex-1 p-4 sm:p-5 md:p-6 lg:p-8 xl:p-12">
+      <div className="overflow-y-auto flex-1 min-h-0 p-4 sm:p-5 md:p-6 lg:p-8 xl:p-12 pb-6 md:pb-6 lg:pb-8 xl:pb-12">
         {/* Hero Image Section */}
         <motion.div
           className="mb-4 sm:mb-6 md:mb-8"
         >
           <motion.div
-            className="relative w-full h-48 sm:h-64 md:h-[50vh] lg:h-[60vh] max-h-[70vh] overflow-hidden"
+            className="relative w-full h-48 sm:h-64 md:h-[50vh] lg:h-[60vh] max-h-[70vh]"
             layoutId={`work-image-${work.id}`}
             transition={{ type: "tween", ease: [0.16, 1, 0.3, 1], duration: 0.4 }}
             style={{ originX: 0, originY: 0.5 }}
           >
-            <Image
-              src={work.img}
-              alt={work.title}
-              fill
-              className="object-contain object-left"
-              priority
-              sizes="(max-width: 768px) 100vw, 80vw"
-            />
+            <div className="relative w-full h-full overflow-hidden rounded-lg my-10">
+              <Image
+                src={work.img}
+                alt={work.title}
+                fill
+                className="object-contain object-left"
+                priority
+                sizes="(max-width: 768px) 100vw, 80vw"
+              />
+            </div>
+            {/* External Link Chip */}
+            {work.externalUrl && (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.2 }}
+                className="absolute -top-5 -left-2 z-20"
+              >
+                <Link
+                  href={work.externalUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 sm:gap-1.5 px-1.5 py-0.5 sm:px-2 sm:py-1 bg-white/60 hover:bg-white/80 backdrop-blur-sm rounded-full text-grey-600 hover:text-grey-800 text-[10px] sm:text-xs font-normal transition-all shadow-sm hover:shadow border border-grey-200/50 hover:border-grey-300/50 focus:outline-none focus:ring-1 focus:ring-grey-400 focus:ring-offset-1"
+                >
+                  <span className="hidden sm:inline">View Full Work</span>
+                  <span className="sm:hidden">View</span>
+                  <svg className="w-2.5 h-2.5 sm:w-3 sm:h-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </Link>
+              </motion.div>
+            )}
           </motion.div>
         </motion.div>
 
@@ -142,7 +167,7 @@ function StoryModal({ work, onClose }: { work: Work; onClose: () => void }) {
             {work.title}
           </motion.h1>
           {work.subTitle && (
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-400 italic">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-grey-700 italic">
               {work.subTitle}
             </p>
           )}
@@ -156,9 +181,9 @@ function StoryModal({ work, onClose }: { work: Work; onClose: () => void }) {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.3 }}
-              className="border border-gray-600 px-4 sm:px-5 md:px-6 lg:px-8 py-4 sm:py-5 md:py-6 lg:py-8"
+              className="border border-grey-300 px-4 sm:px-5 md:px-6 lg:px-8 py-4 sm:py-5 md:py-6 lg:py-8 bg-grey-50"
             >
-              <p className="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed text-gray-200 whitespace-pre-line">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed text-grey-800 whitespace-pre-line">
                 {work.summary || work.description}
               </p>
             </motion.div>
@@ -170,33 +195,12 @@ function StoryModal({ work, onClose }: { work: Work; onClose: () => void }) {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.4 }}
-              className="border border-gray-600 px-4 sm:px-5 md:px-6 py-4 sm:py-5 md:py-6 ml-auto max-w-full sm:max-w-md"
+              className="border border-grey-300 px-4 sm:px-5 md:px-6 py-4 sm:py-5 md:py-6 ml-auto max-w-full sm:max-w-md bg-grey-50"
             >
-              <p className="text-xs sm:text-sm text-gray-400 italic">{work.artist}</p>
+              <p className="text-xs sm:text-sm text-grey-600 italic">{work.artist}</p>
             </motion.div>
           )}
 
-          {/* External Link */}
-          {work.externalUrl && (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
-              className="pt-2 sm:pt-3 md:pt-4"
-            >
-              <Link
-                href={work.externalUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 sm:gap-3 text-sm sm:text-base text-gray-300 hover:text-white transition-colors underline underline-offset-4 decoration-gray-500 hover:decoration-gray-400"
-              >
-                View Full Work
-                <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-              </Link>
-            </motion.div>
-          )}
         </div>
       </div>
     </motion.div>
@@ -254,7 +258,7 @@ function VideoRoomModal({ work, onClose }: { work: Work; onClose: () => void }) 
 
   return (
     <motion.div
-      className="bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 rounded-none md:rounded-3xl shadow-2xl w-full h-full overflow-hidden flex flex-col pointer-events-auto border-0 md:border border-gray-700/50 relative"
+      className="bg-gradient-to-br from-white via-grey-50 to-white rounded-none md:rounded-3xl shadow-2xl w-full h-full max-h-full overflow-hidden flex flex-col pointer-events-auto border-0 md:border border-grey-300 relative"
       initial={{ scale: 0.85, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       exit={{ scale: 0.85, opacity: 0 }}
@@ -269,14 +273,14 @@ function VideoRoomModal({ work, onClose }: { work: Work; onClose: () => void }) 
       <div className="absolute top-3 right-3 sm:top-4 sm:right-4 md:top-6 md:right-6 z-50 flex flex-col items-center gap-1">
         <button
           onClick={onClose}
-          className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gray-800/90 hover:bg-gray-700 active:bg-gray-600 flex items-center justify-center transition-colors border border-gray-700/50 touch-manipulation"
+          className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/90 hover:bg-grey-100 active:bg-grey-200 flex items-center justify-center transition-colors border border-grey-300 touch-manipulation shadow-lg focus:outline-none focus:ring-2 focus:ring-grey-500 focus:ring-offset-2"
           aria-label="Close modal"
         >
-          <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-4 h-4 sm:w-5 sm:h-5 text-grey-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
-        <span className="text-xs text-gray-400">escape</span>
+        <span className="text-xs text-grey-700">escape</span>
       </div>
 
       {/* People Shadows - Multiple layers for depth (hidden on small screens) */}
@@ -328,7 +332,7 @@ function VideoRoomModal({ work, onClose }: { work: Work; onClose: () => void }) 
           transition={{ type: "tween", ease: [0.16, 1, 0.3, 1], duration: 0.5 }}
         >
           {/* Title Section */}
-          <div className="w-full h-full flex-shrink-0 flex items-center justify-center px-3 sm:px-4 md:px-6 lg:px-8 xl:px-16 relative">
+          <div className="w-full h-full flex-shrink-0 flex items-center justify-center px-3 sm:px-4 md:px-6 lg:px-8 xl:px-16 py-4 md:py-0 relative">
             {/* Subtle background pattern */}
             <div className="absolute inset-0 opacity-5">
               <div className="absolute inset-0" style={{
@@ -342,15 +346,15 @@ function VideoRoomModal({ work, onClose }: { work: Work; onClose: () => void }) 
               transition={{ delay: 0.2 }}
               className="text-center max-w-3xl relative z-10 px-2"
             >
-              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold mb-2 sm:mb-3 md:mb-4 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent leading-tight">
+              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold mb-2 sm:mb-3 md:mb-4 bg-gradient-to-r from-grey-900 to-grey-600 bg-clip-text text-transparent leading-tight">
                 {work.title}
               </h1>
               {work.subTitle && (
-                <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-gray-400 italic mb-3 sm:mb-4 md:mb-6 lg:mb-8">{work.subTitle}</p>
+                <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-grey-600 italic mb-3 sm:mb-4 md:mb-6 lg:mb-8">{work.subTitle}</p>
               )}
               {canGoNext && (
                 <motion.div
-                  className="text-gray-300 text-xs sm:text-sm md:text-base lg:text-lg"
+                  className="text-grey-700 text-xs sm:text-sm md:text-base lg:text-lg"
                   animate={{ x: [0, 10, 0] }}
                   transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
                 >
@@ -374,9 +378,9 @@ function VideoRoomModal({ work, onClose }: { work: Work; onClose: () => void }) 
               className="w-full max-w-5xl relative z-10"
             >
               {videoId ? (
-                <div className="relative w-full pb-[56.25%] rounded-lg md:rounded-2xl overflow-hidden shadow-2xl border border-gray-700/50 md:border-2 lg:border-4 bg-black">
+                <div className="relative w-full pb-[56.25%] rounded-lg md:rounded-2xl overflow-hidden shadow-2xl border border-grey-300 md:border-2 lg:border-4 bg-black">
                   {/* Glow effect around video */}
-                  <div className="absolute -inset-0.5 sm:-inset-1 md:-inset-2 bg-blue-500/20 rounded-lg md:rounded-2xl blur-xl -z-10"></div>
+                  <div className="absolute -inset-0.5 sm:-inset-1 md:-inset-2 bg-grey-500/20 rounded-lg md:rounded-2xl blur-xl -z-10"></div>
                   <iframe
                     src={`https://player.vimeo.com/video/${videoId}?autoplay=0&title=0&byline=0&portrait=0`}
                     className="absolute top-0 left-0 w-full h-full rounded-lg md:rounded-xl"
@@ -386,7 +390,7 @@ function VideoRoomModal({ work, onClose }: { work: Work; onClose: () => void }) 
                 </div>
               ) : (
                 <div className="relative w-full pb-[56.25%] rounded-lg md:rounded-2xl overflow-hidden shadow-2xl border border-gray-700/50 md:border-2 lg:border-4 bg-gray-800 flex items-center justify-center">
-                  <p className="text-gray-400 text-xs sm:text-sm md:text-base">Video unavailable</p>
+                  <p className="text-grey-700 text-xs sm:text-sm md:text-base">Video unavailable</p>
                 </div>
               )}
             </motion.div>
@@ -394,15 +398,15 @@ function VideoRoomModal({ work, onClose }: { work: Work; onClose: () => void }) 
 
           {/* Description Section */}
           {work.summary && (
-            <div className="w-full h-full flex-shrink-0 flex items-center justify-center px-3 sm:px-4 md:px-6 lg:px-8 xl:px-16">
+            <div className="w-full h-full flex-shrink-0 flex items-center justify-center px-3 sm:px-4 md:px-6 lg:px-8 xl:px-16 py-4 md:py-0">
               <motion.div
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.4 }}
-                className="max-w-3xl bg-gray-800/50 rounded-lg md:rounded-2xl p-3 sm:p-4 md:p-6 lg:p-8 xl:p-12 border border-gray-700/50 shadow-xl"
+                className="max-w-3xl bg-grey-50 rounded-lg md:rounded-2xl p-3 sm:p-4 md:p-6 lg:p-8 xl:p-12 border border-grey-300 shadow-xl"
               >
                 <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-3 sm:mb-4 md:mb-5 lg:mb-6">About This Work</h2>
-                <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl leading-relaxed text-gray-200 whitespace-pre-line">
+                <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl leading-relaxed text-grey-800 whitespace-pre-line">
                   {work.summary}
                 </p>
                 {work.externalUrl && (
@@ -410,7 +414,7 @@ function VideoRoomModal({ work, onClose }: { work: Work; onClose: () => void }) 
                     href={work.externalUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 sm:gap-2 mt-3 sm:mt-4 md:mt-5 lg:mt-6 text-blue-400 hover:text-blue-300 active:text-blue-200 transition-colors text-xs sm:text-sm md:text-base touch-manipulation"
+                    className="inline-flex items-center gap-1.5 sm:gap-2 mt-3 sm:mt-4 md:mt-5 lg:mt-6 text-grey-800 hover:text-grey-900 active:text-grey-700 transition-colors text-xs sm:text-sm md:text-base touch-manipulation focus:outline-none focus:ring-2 focus:ring-grey-500 focus:ring-offset-2 rounded"
                   >
                     Learn more
                     <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -428,10 +432,10 @@ function VideoRoomModal({ work, onClose }: { work: Work; onClose: () => void }) 
       {canGoPrevious && (
         <button
           onClick={handlePrevious}
-          className="absolute left-3 sm:left-4 md:left-6 lg:left-8 top-1/2 -translate-y-1/2 z-50 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-gray-800/90 hover:bg-gray-700 active:bg-gray-600 flex items-center justify-center transition-colors border border-gray-700/50 touch-manipulation"
+          className="absolute left-3 sm:left-4 md:left-6 lg:left-8 top-1/2 -translate-y-1/2 z-50 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-white/90 hover:bg-grey-100 active:bg-grey-200 flex items-center justify-center transition-colors border border-grey-300 touch-manipulation shadow-lg"
           aria-label="Previous slide"
         >
-          <svg className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-grey-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
         </button>
@@ -443,7 +447,7 @@ function VideoRoomModal({ work, onClose }: { work: Work; onClose: () => void }) 
           className="absolute right-3 sm:right-4 md:right-6 lg:right-8 top-1/2 -translate-y-1/2 z-50 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-gray-800/90 hover:bg-gray-700 active:bg-gray-600 flex items-center justify-center transition-colors border border-gray-700/50 touch-manipulation"
           aria-label="Next slide"
         >
-          <svg className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-grey-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
         </button>
@@ -475,12 +479,12 @@ function PersonShadow({ variant = 0, delay = 0 }: { variant?: number; delay?: nu
         className="drop-shadow-lg"
       >
         {/* Head */}
-        <circle cx="30" cy="20" r="12" fill="currentColor" className="text-gray-700" />
+        <circle cx="30" cy="20" r="12" fill="currentColor" className="text-grey-400" />
         {/* Body - Silhouette */}
         <path
           d="M30 32 Q20 50 15 60 Q15 70 25 70 Q30 70 30 75 Q30 80 35 80 Q40 80 40 75 Q40 70 45 70 Q55 70 55 60 Q50 50 30 32 Z"
           fill="currentColor"
-          className="text-gray-700"
+          className="text-grey-400"
         />
       </svg>
     </motion.div>

@@ -35,7 +35,7 @@ export default function ReadMore({ text, maxLength = 150, className = "" }: Read
           e.stopPropagation();
           setIsExpanded(!isExpanded);
         }}
-        className="ml-1.5 text-blue-300 underline hover:no-underline focus:outline-none focus:ring-2 focus:ring-blue-300/50 rounded transition-all"
+        className="ml-1.5 text-grey-800 underline hover:no-underline focus:outline-none focus:ring-2 focus:ring-grey-500 focus:ring-offset-2 rounded transition-all"
         aria-label={isExpanded ? "Read less" : "Read more"}
         type="button"
       >
