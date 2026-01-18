@@ -40,11 +40,8 @@ export default function MinimalNav() {
                         >
                             Contact
                         </Link>
-                        {/* Theme Toggle Button - HIDDEN BUT DO NOT DELETE
-                            This component provides theme switching functionality.
-                            It's currently hidden but the functionality is still active.
-                            To show it again, remove the 'hidden' class below. */}
-                        <div className="pt-2 hidden">
+                        {/* Theme Toggle Button */}
+                        <div className="pt-2">
                             <ThemeToggle />
                         </div>
                     </div>
@@ -77,13 +74,8 @@ export default function MinimalNav() {
                             >
                                 Contact
                             </Link>
-                            {/* Theme Toggle Button - HIDDEN BUT DO NOT DELETE
-                                This component provides theme switching functionality.
-                                It's currently hidden but the functionality is still active.
-                                To show it again, remove the 'hidden' class below. */}
-                            <div className="hidden">
-                                <ThemeToggle />
-                            </div>
+                            {/* Theme Toggle Button */}
+                            <ThemeToggle />
                         </div>
                     </div>
                 </div>

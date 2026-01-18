@@ -119,6 +119,37 @@
   --background-end-rgb: 255, 255, 255;
 }
 
+/* Cream/Beige theme - subtle, warm, elegant palette inspired by paper and parchment */
+[data-theme="cream"] {
+  /* Soft cream and beige tones */
+  --color-grey-50: #faf8f3;   /* Lightest cream - main background */
+  --color-grey-100: #f5f1e8;  /* Very light beige */
+  --color-grey-200: #ede8dd;  /* Light beige */
+  --color-grey-300: #ddd8cf;  /* Medium-light beige */
+  --color-grey-400: #c4beb3;  /* Medium beige-grey */
+  --color-grey-500: #a89f92;  /* Base beige-grey */
+  --color-grey-600: #8a8071;  /* Medium-dark beige */
+  --color-grey-700: #6b6256;  /* Dark beige */
+  --color-grey-800: #4a433a;  /* Very dark beige-brown */
+  --color-grey-900: #3a342d;  /* Almost black brown */
+  --color-grey-950: #2a2520;  /* Deepest brown */
+
+  /* Soft, muted text colors for readability on cream */
+  --color-text-primary: #3a342d;    /* Soft dark brown */
+  --color-text-secondary: #4a433a;   /* Medium brown */
+  --color-text-tertiary: #6b6256;    /* Muted brown */
+  --color-text-muted: #8a8071;      /* Light brown */
+  
+  /* Cream backgrounds */
+  --color-bg-primary: #faf8f3;       /* Main cream background */
+  --color-bg-secondary: #f5f1e8;    /* Secondary cream */
+  --color-bg-tertiary: #ede8dd;      /* Tertiary beige */
+  
+  /* Subtle borders */
+  --color-border-primary: #ddd8cf;   /* Soft beige border */
+  --color-border-secondary: #c4beb3;  /* Lighter beige border */
+}
+
 /* Dark theme - activated when [data-theme="dark"] is set on html element */
 [data-theme="dark"] {
   --color-grey-50: #0a0a0a;
@@ -156,6 +187,11 @@ body {
   font-family: var(--font-lora), serif;
 }
 
+/* Cream theme - subtle gradient with cream tones */
+[data-theme="cream"] body {
+  background: linear-gradient(to right, var(--color-bg-primary), var(--color-bg-secondary));
+}
+
 p {
   color: var(--color-text-secondary); /* Uses --color-grey-800 for 4.5:1 contrast on white */
   line-height: 1.75;
@@ -169,6 +205,12 @@ h1 {
   letter-spacing: -0.02em;
 }
 
+/* Lighter font weights for cream theme */
+[data-theme="cream"] h1 {
+  font-weight: 300;
+  letter-spacing: 0.01em;
+}
+
 h2 {
   font-size: 2rem;
   color: var(--color-text-primary); /* Uses --color-grey-900 */
@@ -177,11 +219,29 @@ h2 {
   letter-spacing: -0.01em;
 }
 
+[data-theme="cream"] h2 {
+  font-weight: 300;
+  letter-spacing: 0.01em;
+}
+
 h3 {
   font-size: 1.5rem;
   color: var(--color-text-primary); /* Uses --color-grey-900 */
   font-weight: 600;
   line-height: 1.4;
+}
+
+[data-theme="cream"] h3 {
+  font-weight: 300;
+}
+
+/* Lighter body text for cream theme */
+[data-theme="cream"] body {
+  font-weight: 300;
+}
+
+[data-theme="cream"] p {
+  font-weight: 300;
 }
 
 /* Smooth scrolling */
